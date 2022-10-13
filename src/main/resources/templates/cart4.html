@@ -14,18 +14,38 @@
 <link rel="stylesheet" type="text/css" th:href="@{/css/cart.css}">
 </head>
 <body>
-<h2 >
-		<table th:text="${map.toString.toString}">
-			<div th:each="key,value : ${map}"></div>
-			<div th:text="${key.getName)}"></div>div>
-			<div th:text="${value}"></div>
-			</tr>
-			
-		</table>
+		
+		<div th:each = "mapEntry : ${map}">
+                <span th:text = "${mapEntry.key.getName}"></span>
+                <button onclick="increment()">+</button>
+                <span th:text = "${mapEntry.value}"></span>
+                <input placeholder="${mapEntry.value}" class="23form-control" id="quantity" name="quantity" type="text" />
+                 <button onclick="increment()">-</button>
+                 
+              
+         </div>
 
-	</h2>
+	
 	<label class="form-label">Quantity</label> 
-	<input class="form-control" id="quantity" name="quantity" type="text" />
+	<input placeholder="${mapEntry.value}" class="23form-control" id="quantity" name="quantity" type="text" />
 
+ <script>
+            //initialising a variable name data
+            var data = 0;
+  
+            //printing default value of data that is 0 in h2 tag
+            document.getElementById("counting").innerText = data;
+  
+            //creation of increment function
+            function increment() {
+                data = data + 1;
+                document.getElementById("counting").innerText = data;
+            }
+            //creation of decrement function
+            function decrement() {
+                data = data - 1;
+                document.getElementById("counting").innerText = data;
+            }
+        </script>
 </body>
 </html>

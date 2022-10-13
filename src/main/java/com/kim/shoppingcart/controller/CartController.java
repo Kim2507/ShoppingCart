@@ -37,7 +37,7 @@ public class CartController {
 		System.out.println(cart);
 		// Add more products into the existing cart 
 		cart.addProduct(productRepo.findById(1).get());
-		System.out.println(productRepo.findById(1).get());
+		System.out.println(cart.getProductMap().toString().toString());
 		mv.addAttribute("map",cart.getProductMap());
 		cartRepo.save(cart);
 		return "cart4";
