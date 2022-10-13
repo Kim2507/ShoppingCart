@@ -1,0 +1,7 @@
+@charset "ISO-8859-1";
+
+.form-control{
+	display: flex;
+	display: inline-block;
+	width: 50%;
+}

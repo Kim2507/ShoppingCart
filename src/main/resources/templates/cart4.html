@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Your Cart</title>
+<link
+	href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap"
+	rel="stylesheet" />
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" th:href="@{/css/cart.css}">
+</head>
+<body>
+<h2 >
+		<table th:text="${map.toString.toString}">
+			<div th:each="key,value : ${map}"></div>
+			<div th:text="${key.getName)}"></div>div>
+			<div th:text="${value}"></div>
+			</tr>
+			
+		</table>
+
+	</h2>
+	<label class="form-label">Quantity</label> 
+	<input class="form-control" id="quantity" name="quantity" type="text" />
+
+</body>
+</html>
