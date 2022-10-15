@@ -30,9 +30,6 @@ public class OrderDetails implements Serializable {
 	@ManyToMany(targetEntity=ProductDetails.class)
 	private Set productsSet;
 	
-	
-	
-	
 
 	public Set getProductsSet() {
 		return productsSet;

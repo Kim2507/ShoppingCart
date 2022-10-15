@@ -33,22 +33,26 @@ public class CartServiceImplTest {
 	EntityManager entityManager;
 	
 	
-	
+	//succeed
 	@Test 
 	public void testAddProductToCart() {
 		Cart cart = new Cart();
-		List<ProductDetails> productList = new ArrayList<>();
-		ProductDetails p1 = productService.findById(1).get();
-		ProductDetails p2 = productService.findById(2).get();
-		productList.add(p2);
-		productList.add(p2);
-		productList.add(p2);
-		productList.add(p2);
-		cart.setId(18);
+		Set<ProductDetails> productList = new HashSet<>();
+		ProductDetails p = new ProductDetails("Black Tea","desc",5.5,8);
+		productRepo.save(p);
+		productList.add(p);
+		productList.add(p);
+		productList.add(p);
 		cart.setProductsList(productList);
 		System.out.println(cart.getProductMap().toString().toString());
 		System.out.println(cart.getPreTax());
 		System.out.println(cart.getTotal());
 		cartRepo.save(cart);
 	}
+	
+//	@Test 
+//	public void getListCart() {
+//		Cart cart = cartRepo.findById(19).get();
+//		System.out.println(cart.getProductsList().toString().toString());
+//	}
 }

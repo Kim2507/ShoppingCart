@@ -2,7 +2,10 @@ package com.kim.shoppingcart.controller;
 
 import java.util.Optional;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,14 +35,25 @@ public class CartController {
 	
 	@PostMapping("/addedBT")
 	public String addBTToCart(Model mv) {
+
+		// get the ID of the authenticated user
+		
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		System.out.println(auth.getDetails().toString());
+		// Cart cart = carRepo.findCartByUserId(userID)
+		// if cart null create new car
+		// if it's not null cart.addproduct(product)
+
 		//Pulling the existing cart from db
-		Cart cart = cartRepo.findById(1).get();
-		System.out.println(cart);
-		// Add more products into the existing cart 
-		cart.addProduct(productRepo.findById(1).get());
-		System.out.println(cart.getProductMap().toString().toString());
-		mv.addAttribute("map",cart.getProductMap());
-		cartRepo.save(cart);
+//		Cart cart = cartRepo.findById(1).get();
+//		System.out.println(cart);
+//		// Add more products into the existing cart
+//		//ProductDetails newProduct = new ProductDetails("Choclate","Dark Choclate",10.00,5);
+//		//newProduct.setCart(cart);
+//		//cart.addProduct(newProduct);
+////		System.out.println(cart.getProductMap().toString().toString());
+//		mv.addAttribute("map",cart.getProductMap());
+//		//productRepo.save(newProduct);
 		return "cart4";
 	}
 	

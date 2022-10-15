@@ -21,6 +21,13 @@ public class ProductServiceImplTest {
 	ProductRepository productRepo;
 	
 	@Test
+	public void testAddProduct() {
+		ProductDetails p = new ProductDetails("","",5.5,0);
+		productRepo.save(p);
+		
+	}
+	
+	@Test
 	public void testGetProducts() {
 		//Optional<ProductDetails> btO = productService.findById(1);
 		ProductDetails bt = productRepo.findById(1).get();

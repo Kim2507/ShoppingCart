@@ -5,10 +5,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 @Entity
 @Table
+@Data
+@AllArgsConstructor
 public class Cart implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -16,11 +21,14 @@ public class Cart implements Serializable{
 	
 	private final double TAX_RATE = 0.05;
 
-	private double preTax;
-	private double total;
+	private double preTaxPrice;
+	private double totalPrice;
 	
-	@OneToMany(mappedBy="cart")
-	private List<ProductDetails> productsList;
+	@OneToOne(cascade=CascadeType.ALL)
+	private User userID;
+	
+	@OneToMany(targetEntity=ProductDetails.class)
+	private Set<ProductDetails> productsList;
 
 	@Transient
 	private Map<ProductDetails,Integer> productsMap;
@@ -40,14 +48,9 @@ public class Cart implements Serializable{
 		this.id = id;
 	}
 
-	public List<ProductDetails> getProductsList() {
-		return productsList;
-	}
-
-	public void setProductsList(List<ProductDetails> productsList) {
-		this.productsList = productsList;
-	}
 	
+	
+
 	public void addProduct(ProductDetails product) {
 		productsList.add(product);
 	}
@@ -68,19 +71,19 @@ public class Cart implements Serializable{
 	
 	public double getPreTax() {
 		productsMap.forEach((key,value)->{
-			preTax += key.getPrice()*value;
+			preTaxPrice += key.getPrice()*value;
 		});
-		return preTax;
+		return preTaxPrice;
 	}
 	
 	public double getTotal() {
-		total= preTax*(1+TAX_RATE);
-		return total;
+		totalPrice= preTaxPrice*(1+TAX_RATE);
+		return totalPrice;
 	}
 
 	@Override
 	public String toString() {
-		return "Cart [id=" + id + ", TAX_RATE=" + TAX_RATE + ", preTax=" + preTax + ", total=" + total
+		return "Cart [id=" + id + ", TAX_RATE=" + TAX_RATE + ", preTax=" + preTaxPrice + ", total=" + totalPrice
 				 + ", productsMap=" + productsMap + "]";
 	}
 	
