@@ -36,7 +36,7 @@ public class AuthController {
         return "login";
     }
     
-    @PostMapping("/loggedIn")
+    @PostMapping("/login")
     public String loginSuccess(){
         return "shopping";
     }
@@ -60,7 +60,7 @@ public class AuthController {
 		
 		if(result.hasErrors()){
             model.addAttribute("user", userDto);
-            return "redirect:/register?success";
+            return "/register?error";
         }
 		
 		userService.saveUser(userDto);

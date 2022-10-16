@@ -5,8 +5,9 @@ import org.springframework.stereotype.Repository;
 
 import com.kim.shoppingcart.model.Cart;
 import com.kim.shoppingcart.model.OrderDetails;
+import com.kim.shoppingcart.service.CartService;
 
 @Repository
-public interface CartRepository extends JpaRepository<Cart, Integer> {
+public interface CartRepository extends JpaRepository<Cart, Integer>{
 
 }

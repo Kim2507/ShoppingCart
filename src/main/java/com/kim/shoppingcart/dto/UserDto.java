@@ -26,7 +26,6 @@ public class UserDto {
     @NotEmpty
     private String zipCode;
     
-    
     @NotEmpty(message = "Email should not be empty")
     @Email
     private String email;

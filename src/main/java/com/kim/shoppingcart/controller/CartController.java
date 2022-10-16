@@ -5,7 +5,9 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,61 +17,80 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.kim.shoppingcart.model.Cart;
 import com.kim.shoppingcart.model.ProductDetails;
+import com.kim.shoppingcart.model.User;
 import com.kim.shoppingcart.repository.CartRepository;
 import com.kim.shoppingcart.repository.ProductRepository;
+import com.kim.shoppingcart.security.CustomUserDetailsService;
 import com.kim.shoppingcart.service.impl.CartServiceImpl;
 import com.kim.shoppingcart.service.impl.ProductServiceImpl;
+import com.kim.shoppingcart.service.impl.UserServiceImpl;
 
 @Controller
 public class CartController {
 	@Autowired
 	CartRepository cartRepo;
-	
+	@Autowired
+	CartServiceImpl cartService;
 	@Autowired
 	ProductRepository productRepo;
+	
+	@Autowired
+	CustomUserDetailsService userDetailsService;
+	
+	@Autowired
+	UserServiceImpl userService;
 	
 	@GetMapping("/shopping")
 	public String showShopPage() {
 		return "shopping";
 	}
 	
+	
+//	@GetMapping("/currentuserId")
+//	@ResponseBody
+//	public Long currentUserId() {
+//		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+//		String userName = auth.getName();
+//		User user = userService.findUserByEmail(userName);
+//		return user.getId();
+//		
+//	}
 	@PostMapping("/addedBT")
-	public String addBTToCart(Model mv) {
+	public String addBTToCart(Model model) {
 
 		// get the ID of the authenticated user
-		
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		System.out.println(auth.getDetails().toString());
-		// Cart cart = carRepo.findCartByUserId(userID)
-		// if cart null create new car
-		// if it's not null cart.addproduct(product)
-
-		//Pulling the existing cart from db
-//		Cart cart = cartRepo.findById(1).get();
-//		System.out.println(cart);
-//		// Add more products into the existing cart
-//		//ProductDetails newProduct = new ProductDetails("Choclate","Dark Choclate",10.00,5);
-//		//newProduct.setCart(cart);
-//		//cart.addProduct(newProduct);
-////		System.out.println(cart.getProductMap().toString().toString());
-//		mv.addAttribute("map",cart.getProductMap());
-//		//productRepo.save(newProduct);
+		String userName = auth.getName();
+		User user = userService.findUserByEmail(userName);
+		Long userId = user.getId();
+		Cart cart = cartService.findByUserID((long)userId);
+		//if cart null create new car
+		if(cart==null) {
+			cart = new Cart();
+		}
+		//Add product to cart
+		cart.addProduct(productRepo.findById(1).get());
+		cart.getProductsMap();
+		model.addAttribute("cart",cart);
+		// Save updated cart 
+		cartRepo.save(cart);
 		return "cart4";
 	}
 	
-	@PostMapping("/addedGT")
-	public void addGTToCart() {
-		Cart cart = cartRepo.findById(1).get();
-		cart.addProduct(productRepo.getReferenceById(2));
-		cartRepo.save(cart);
+	@GetMapping("/checkout")
+	public String showCheckout(Model model) {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		String userName = auth.getName();
+		User user = userService.findUserByEmail(userName);
+		model.addAttribute("user",user);
+		return "checkout";
 	}
-	
 	
 	@GetMapping("/showCart")
 	@ResponseBody
 	public String showCart(ModelAndView mv) {
 		Cart cart = cartRepo.findById(1).get();
-		mv.addObject("map",cart.getProductMap());
+		mv.addObject("map",cart.getProductsMap());
 		return "cart4";
 	}
 	

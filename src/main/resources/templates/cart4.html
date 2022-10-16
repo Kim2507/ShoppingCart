@@ -14,24 +14,29 @@
 <link rel="stylesheet" type="text/css" th:href="@{/css/cart.css}">
 </head>
 <body>
-
-	<div th:each="mapEntry : ${map}">
-		<form method="post" th:action="@{/addOrder}" th:object="${order}">
+<form method="get" th:action="@{/checkout}">
+	<div class="item-display" th:each="mapEntry: ${cart.getProductsMap}">
+		<div class="item-display" th:text="${mapEntry.key.getName}"></div>
+		<p>Price each</p><div class="item-display" th:text="${mapEntry.key.getPrice}"></div>
+		<p>Quantity</p><div class="item-display" th:text="${mapEntry.value}"></div>
+	</div>
+	
+	<p>PreTax</p><div th:text="${cart.getPreTaxPrice}"></div>
+	<p>Total</p><div th:text="${cart.getTotalPrice}">Total</div>
+	
+	<button type="submit">Checkout</button>
+</form>
+	<!-- <form method="post" th:action="@{/saveUpdatedCart}" th:object="${cart}">
 			<input th:field="*{mapEntry.key.getProductId}"></span>
 		</form> 
 		<span th:text="${mapEntry.key.getName}"></span>
 		<button onclick="increment()">+</button>
 		<span id="counting" th:text="${mapEntry.value}"></span>
-		<button onclick="increment()">-</button>
-
-
-	</div>
-
-
+		<button onclick="increment()">-</button> -->
 	<!-- <label class="form-label">Quantity</label> 
 	<input placeholder="${mapEntry.value}" class="23form-control" id="quantity" name="quantity" type="text" /> -->
 
- <script th:inline="javascript">
+ <!-- <script th:inline="javascript">
             //initialising a variable name data
             var data = 0;
   
@@ -48,6 +53,6 @@
                 data = data - 1;
                 document.getElementById("counting").innerText = data;
             }
-        </script>
+        </script> -->
 </body>
 </html>

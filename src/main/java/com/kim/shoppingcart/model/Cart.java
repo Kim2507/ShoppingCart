@@ -12,7 +12,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 @Entity
 @Table
-@Data
+
 @AllArgsConstructor
 public class Cart implements Serializable{
 	@Id
@@ -59,9 +59,8 @@ public class Cart implements Serializable{
     	productsList.remove(product);
     }
 	
-	public Map<ProductDetails,Integer> getProductMap(){
+	public Map<ProductDetails,Integer> getProductsMap(){
 		productsMap = new HashMap<>();
-		//productsList = list;
 		for(ProductDetails p : getProductsList()) {
 			Integer productCounter = productsMap.get(p);
 			productsMap.put(p,(productCounter==null)?1:productCounter+1);
@@ -69,14 +68,16 @@ public class Cart implements Serializable{
 		return productsMap;
 	}
 	
-	public double getPreTax() {
+	
+
+	public double getPreTaxPrice() {
 		productsMap.forEach((key,value)->{
 			preTaxPrice += key.getPrice()*value;
 		});
 		return preTaxPrice;
 	}
 	
-	public double getTotal() {
+	public double getTotalPrice() {
 		totalPrice= preTaxPrice*(1+TAX_RATE);
 		return totalPrice;
 	}
@@ -85,6 +86,38 @@ public class Cart implements Serializable{
 	public String toString() {
 		return "Cart [id=" + id + ", TAX_RATE=" + TAX_RATE + ", preTax=" + preTaxPrice + ", total=" + totalPrice
 				 + ", productsMap=" + productsMap + "]";
+	}
+
+	public User getUserID() {
+		return userID;
+	}
+
+	public void setUserID(User userID) {
+		this.userID = userID;
+	}
+
+	public Set<ProductDetails> getProductsList() {
+		return productsList;
+	}
+
+	public void setProductsList(Set<ProductDetails> productsList) {
+		this.productsList = productsList;
+	}
+
+	public double getTAX_RATE() {
+		return TAX_RATE;
+	}
+
+	public void setPreTaxPrice(double preTaxPrice) {
+		this.preTaxPrice = preTaxPrice;
+	}
+
+	public void setTotalPrice(double totalPrice) {
+		this.totalPrice = totalPrice;
+	}
+
+	public void setProductsMap(Map<ProductDetails, Integer> productsMap) {
+		this.productsMap = productsMap;
 	}
 	
 	
