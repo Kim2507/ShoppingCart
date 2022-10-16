@@ -1,17 +1,18 @@
 package com.kim.shoppingcart.service;
 
-import java.math.BigDecimal;
-import java.util.Map;
 
-import com.kim.shoppingcart.model.ProductDetails;
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.Query;
+
+import com.kim.shoppingcart.model.Cart;
+
 
 public interface CartService {
-	void addProduct(ProductDetails product);
+	
 
-    void removeProduct(ProductDetails product);
-
-    Map<ProductDetails, Integer> getProductsInCart();
-
-    
+	Optional<Cart> findById(Integer id);
+	@Query(value="SELECT * FROM shoppingcart1.cart WHERE userid_id = ?1")
+    Cart findByUserID(Long id);
 
 }

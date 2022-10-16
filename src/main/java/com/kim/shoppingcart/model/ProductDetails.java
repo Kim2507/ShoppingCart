@@ -2,9 +2,9 @@ package com.kim.shoppingcart.model;
 
 import java.io.Serializable;
 
-
-
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -27,24 +27,25 @@ public class ProductDetails implements Serializable {
 	private String name;
 	private String description;
 	private double price;
-	private int quantity;
+	private int stockQuantity;
 
 	
-
+	
 	public ProductDetails(String name, String description, double price, int quantity) {
 		super();
 		this.name = name;
 		this.description = description;
 		this.price = price;
-		this.quantity = quantity;
+		this.stockQuantity = quantity;
 	}
 	
 	public void addStock(int quantity) {
-		this.quantity +=quantity;
+		this.stockQuantity +=quantity;
 	}
 	
 	public void removeStock(int quantity) {
-		this.quantity -=quantity;
+		this.stockQuantity -=quantity;
 	}
+	
 	
 }
