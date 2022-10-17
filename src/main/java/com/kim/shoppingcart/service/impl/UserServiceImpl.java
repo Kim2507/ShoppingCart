@@ -19,6 +19,8 @@ import com.kim.shoppingcart.repository.*;
 import com.kim.shoppingcart.security.CustomUserDetailsService;
 import com.kim.shoppingcart.service.UserService;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.Query;
 import lombok.*;
 
 
@@ -31,6 +33,9 @@ public class UserServiceImpl implements UserService{
 	
 	
 	private PasswordEncoder passwordEncoder;
+	
+	@Autowired
+	EntityManager entityManager;
 	
 	//@Autowired (unecessary autowired)
 	public UserServiceImpl(UserRepository userRepo,RoleRepository roleRepo, PasswordEncoder passwordEncoder) {
@@ -96,19 +101,32 @@ public class UserServiceImpl implements UserService{
 	        role.setName("ROLE_USER");
 	        return roleRepo.save(role);
 	    }
+
+	@Override
+	public List<User> findUserByCity(String city) {
+		Query query = entityManager.createNativeQuery("SELECT * FROM shoppingcart1.users " +
+                "WHERE city LIKE ?", User.class);
+		query.setParameter(1, city+"%");
+        return query.getResultList();
+	}
+
+	@Override
+	public List<User> findUserByState(String state) {
+		Query query = entityManager.createNativeQuery("SELECT * FROM shoppingcart1.users " +
+                "WHERE state LIKE ?", User.class);
+		query.setParameter(1, state+"%");
+        return query.getResultList();
+	}
+
+	@Override
+	public List<User> findUserByName(String name) {
+		Query query = entityManager.createNativeQuery("SELECT * FROM shoppingcart1.users " +
+                "WHERE name LIKE ?", User.class);
+		query.setParameter(1, name+"%");
+        return query.getResultList();
+	}
 	 
-//	 public UserDetails getCurrentLoggedInUser(Authentication authentication) {
-//		 if(authentication==null) return null;
-//		 
-//		 UserDetails user = null;
-//		 Object principal = authentication.getPrincipal();
-//		 
-//		 if(principal instanceof CustomUserDetailsService) {
-//			 user = ((CustomUserDetailsService) principal).getUser();
-//			 
-//		 }
-//		 return user;
-//	 }
+
 	 
 	
 

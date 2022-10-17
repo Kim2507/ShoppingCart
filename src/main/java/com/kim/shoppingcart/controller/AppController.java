@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class AppController {
-	@GetMapping("/home")
+	@GetMapping("/")
 	public String showHome() {
 		return "home";
 	}
@@ -15,9 +15,6 @@ public class AppController {
 		return "aboutus";
 	}
 	
-	@GetMapping("/cart4")
-	public String showCart() {
-		return "cart4";
-	}
+	
 	
 }

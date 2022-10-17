@@ -68,15 +68,18 @@ public class CartController {
 		if(cart==null) {
 			cart = new Cart();
 		}
+		
 		//Add product to cart
         cart.addProduct(productRepo.findById(1).get());
-        cart.getProductsMap();
+        System.out.println(cart.getProductsList().size());
+        //cart.getProductsMap();
 		model.addAttribute("cart",cart);
 		
 		// Save updated cart 
  		//int quantity=cart.getProductsMap().get(productRepo.findById(1).get())  ;
 		//model.addAttribute("quantity",quantity);
-		//cartRepo.save(cart);
+		//cartRepo.deleteById(cart.getId());
+		cartRepo.save(cart);
 		return "cart4";
 	}
 	
@@ -89,13 +92,7 @@ public class CartController {
 		return "checkout";
 	}
 	
-	@GetMapping("/showCart")
-	@ResponseBody
-	public String showCart(ModelAndView mv) {
-		Cart cart = cartRepo.findById(1).get();
-		mv.addObject("map",cart.getProductsMap());
-		return "cart4";
-	}
+	
 	
 	
 }

@@ -14,6 +14,7 @@ import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.WebApplicationContext;
+
 import com.kim.shoppingcart.model.Cart;
 import com.kim.shoppingcart.model.ProductDetails;
 import com.kim.shoppingcart.repository.CartRepository;
@@ -27,7 +28,7 @@ import jakarta.persistence.Query;
 
 @Service
 //@ScopeproxyMode = ScopedProxyMode.TARGET_CLASS)
- @Transactional
+@Transactional
 public class CartServiceImpl implements CartService {
 
 	@Autowired

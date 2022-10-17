@@ -15,12 +15,14 @@
 </head>
 <body>
 <form method="get" th:action="@{/checkout}">
-	<div class="container" th:each="mapEntry: ${cart.getProductsMap}">
+	<!-- <div class="container" th:each="mapEntry: ${cart.getProductsMap}">
 		<div class="item-display" th:text="${mapEntry.key.getName}"></div>
 		<p class="item-display">Price each: </p><div class="item-display" th:text="${mapEntry.key.getPrice}"></div>
 		<p>Quantity</p>
 		<div class="item-display" th:text="${mapEntry.value}"></div>
-	</div>
+	</div> -->
+	<div th:text="${cart.getProductsList.toString}"></div>
+	<div th:text="${cart.getProductsList.size}"></div>
 	
 	<p>PreTax</p><div th:text="${cart.getPreTaxPrice}"></div>
 	<p>Total</p><div th:text="${cart.getTotalPrice}">Total</div>

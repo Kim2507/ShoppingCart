@@ -20,5 +20,11 @@ public interface UserService {
     User findUserByEmail(String email);
 
     List<UserDto> findAllUsers();
+    
+    List<User> findUserByCity(String city);
+    
+    List<User> findUserByState(String state);
+    
+    List<User> findUserByName(String name);
 
 }

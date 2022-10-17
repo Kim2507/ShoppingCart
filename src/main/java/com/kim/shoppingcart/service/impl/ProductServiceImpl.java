@@ -20,14 +20,6 @@ public class ProductServiceImpl implements ProductService {
         this.productRepo = productRepo;
     }
     
-	@Override
-	public Optional<ProductDetails> findById(Integer id) {
-		return productRepo.findById(id);
-	}
-
-	@Override
-	public Page<ProductDetails> findAllProductsPageable(Pageable pageable) {
-		return productRepo.findAll(pageable);
-	}
+	
 
 }

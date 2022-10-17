@@ -8,9 +8,7 @@ import org.springframework.data.domain.Pageable;
 import com.kim.shoppingcart.model.ProductDetails;
 
 public interface ProductService {
-	Optional<ProductDetails> findById(Integer id);
+	
 
-    Page<ProductDetails> findAllProductsPageable(Pageable pageable);
-
-
+   
 }

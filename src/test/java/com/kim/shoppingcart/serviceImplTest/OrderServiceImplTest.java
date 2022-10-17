@@ -25,15 +25,12 @@ public class OrderServiceImplTest {
 	CartServiceImpl cartService;
 	
 	@Autowired
-	ProductService productService;
-	
-	@Autowired
 	ProductRepository productRepo;
 	
 	@Test
 	public void testPlaceOrder() {
-		ProductDetails p1 = productService.findById(1).get();
-		ProductDetails p2 = productService.findById(2).get();
+		ProductDetails p1 = productRepo.findById(1).get();
+		ProductDetails p2 = productRepo.findById(2).get();
 		Set<ProductDetails> products = new HashSet<ProductDetails>();
 		products.add(p1);
 		products.add(p2);
