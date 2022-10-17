@@ -1,6 +1,7 @@
 # TKup ShoppingCart
 
 Technologies: SpringBoot Framework, Database ( MariaDB, Hibernate, ORM)
+
 REST API: Postman
 
 ## Models:
