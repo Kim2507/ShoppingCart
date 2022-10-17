@@ -1967,4 +1967,442 @@ Caused by: java.lang.IllegalArgumentException: DefaultSerializer requires a Seri
 ""2022-10-17 14:16:58 [restartedMain] INFO  o.s.s.a.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
 ""2022-10-17 14:16:58 [restartedMain] INFO  c.k.s.ShoppingCartKApplication - Started ShoppingCartKApplication in 0.755 seconds (process running for 84.885)
 ""2022-10-17 14:16:58 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+""2022-10-17 15:04:35 [restartedMain] INFO  c.k.s.ShoppingCartKApplication - Starting ShoppingCartKApplication using Java 17.0.3 on Kim_PerScholas with PID 11612 (C:\Users\mykim\Documents\spring-boot-workspace\shoppingCartK\target\classes started by mykim in C:\Users\mykim\Documents\spring-boot-workspace\shoppingCartK)
+""2022-10-17 15:04:35 [restartedMain] DEBUG c.k.s.ShoppingCartKApplication - Running with Spring Boot v3.0.0-M5, Spring v6.0.0-M6
+""2022-10-17 15:04:35 [restartedMain] INFO  c.k.s.ShoppingCartKApplication - No active profile set, falling back to 1 default profile: "default"
+""2022-10-17 15:04:35 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-10-17 15:04:35 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 28 ms. Found 5 JPA repository interfaces.
+""2022-10-17 15:04:35 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+""2022-10-17 15:04:35 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2022-10-17 15:04:35 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.0.23]
+""2022-10-17 15:04:35 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2022-10-17 15:04:35 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 541 ms
+""2022-10-17 15:04:35 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Starting...
+""2022-10-17 15:04:35 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-5 - Added connection org.mariadb.jdbc.Connection@5a584ad7
+""2022-10-17 15:04:35 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Start completed.
+""2022-10-17 15:04:35 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1050-42S01: Table 'spring_session' already exists
+""2022-10-17 15:04:35 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1061-42000: Duplicate key name 'SPRING_SESSION_IX1'
+""2022-10-17 15:04:35 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1061-42000: Duplicate key name 'SPRING_SESSION_IX2'
+""2022-10-17 15:04:35 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1061-42000: Duplicate key name 'SPRING_SESSION_IX3'
+""2022-10-17 15:04:35 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1050-42S01: Table 'spring_session_attributes' already exists
+""2022-10-17 15:04:35 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-10-17 15:04:35 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+""2022-10-17 15:04:35 [restartedMain] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+""2022-10-17 15:04:35 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-10-17 15:04:35 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-10-17 15:04:36 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@ce8440c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@15c6fd9f, org.springframework.security.web.context.SecurityContextHolderFilter@456d9020, org.springframework.security.web.header.HeaderWriterFilter@582e1e1f, org.springframework.security.web.authentication.logout.LogoutFilter@735247b1, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@76cb7877, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@40697cb3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@681f5c47, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3382922d, org.springframework.security.web.session.SessionManagementFilter@37e0bb5c, org.springframework.security.web.access.ExceptionTranslationFilter@786fadcb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@53dea785]
+""2022-10-17 15:04:36 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-10-17 15:04:36 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+""2022-10-17 15:04:36 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+""2022-10-17 15:04:36 [restartedMain] INFO  o.s.s.a.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+""2022-10-17 15:04:36 [restartedMain] INFO  c.k.s.ShoppingCartKApplication - Started ShoppingCartKApplication in 1.174 seconds (process running for 234.108)
+""2022-10-17 15:04:36 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+""2022-10-17 15:04:39 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 15 class path changes (2 additions, 4 deletions, 9 modifications)
+""2022-10-17 15:04:39 [Thread-19] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+""2022-10-17 15:04:39 [Thread-19] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-5 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.3/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.3/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.3/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.3/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.3/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.3/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.3/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.3/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.3/java.lang.Thread.run(Thread.java:833)
+""2022-10-17 15:04:39 [Thread-19] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-5 connection adder] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.3/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.3/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.3/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.3/java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:460)
+ java.base@17.0.3/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1061)
+ java.base@17.0.3/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.3/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.3/java.lang.Thread.run(Thread.java:833)
+""2022-10-17 15:04:39 [Thread-19] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-10-17 15:04:39 [Thread-19] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown initiated...
+""2022-10-17 15:04:39 [Thread-19] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown completed.
+""2022-10-17 15:04:39 [restartedMain] INFO  c.k.s.ShoppingCartKApplication - Starting ShoppingCartKApplication using Java 17.0.3 on Kim_PerScholas with PID 11612 (C:\Users\mykim\Documents\spring-boot-workspace\shoppingCartK\target\classes started by mykim in C:\Users\mykim\Documents\spring-boot-workspace\shoppingCartK)
+""2022-10-17 15:04:39 [restartedMain] DEBUG c.k.s.ShoppingCartKApplication - Running with Spring Boot v3.0.0-M5, Spring v6.0.0-M6
+""2022-10-17 15:04:39 [restartedMain] INFO  c.k.s.ShoppingCartKApplication - No active profile set, falling back to 1 default profile: "default"
+""2022-10-17 15:04:40 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-10-17 15:04:40 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 4 JPA repository interfaces.
+""2022-10-17 15:04:40 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+""2022-10-17 15:04:40 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2022-10-17 15:04:40 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.0.23]
+""2022-10-17 15:04:40 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2022-10-17 15:04:40 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 289 ms
+""2022-10-17 15:04:40 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Starting...
+""2022-10-17 15:04:40 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-6 - Added connection org.mariadb.jdbc.Connection@5743ff8e
+""2022-10-17 15:04:40 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Start completed.
+""2022-10-17 15:04:40 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1050-42S01: Table 'spring_session' already exists
+""2022-10-17 15:04:40 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1061-42000: Duplicate key name 'SPRING_SESSION_IX1'
+""2022-10-17 15:04:40 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1061-42000: Duplicate key name 'SPRING_SESSION_IX2'
+""2022-10-17 15:04:40 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1061-42000: Duplicate key name 'SPRING_SESSION_IX3'
+""2022-10-17 15:04:40 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1050-42S01: Table 'spring_session_attributes' already exists
+""2022-10-17 15:04:40 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-10-17 15:04:40 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+""2022-10-17 15:04:40 [restartedMain] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+""2022-10-17 15:04:40 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-10-17 15:04:40 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-10-17 15:04:40 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4ee9579c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@39d45af6, org.springframework.security.web.context.SecurityContextHolderFilter@32345ea1, org.springframework.security.web.header.HeaderWriterFilter@b5210a0, org.springframework.security.web.authentication.logout.LogoutFilter@5a8d45ed, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5e4b0f94, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@40bacc20, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5b760387, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@453f9a07, org.springframework.security.web.session.SessionManagementFilter@5af97850, org.springframework.security.web.access.ExceptionTranslationFilter@3a7910af, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@60d3889b]
+""2022-10-17 15:04:40 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-10-17 15:04:40 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+""2022-10-17 15:04:40 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+""2022-10-17 15:04:40 [restartedMain] INFO  o.s.s.a.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+""2022-10-17 15:04:40 [restartedMain] INFO  c.k.s.ShoppingCartKApplication - Started ShoppingCartKApplication in 0.908 seconds (process running for 238.601)
+""2022-10-17 15:04:40 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+""2022-10-17 15:05:33 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+""2022-10-17 15:05:33 [Thread-23] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+""2022-10-17 15:05:33 [Thread-23] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-6 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.3/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.3/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.3/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.3/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.3/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.3/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.3/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.3/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.3/java.lang.Thread.run(Thread.java:833)
+""2022-10-17 15:05:33 [Thread-23] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-10-17 15:05:33 [Thread-23] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown initiated...
+""2022-10-17 15:05:33 [Thread-23] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown completed.
+""2022-10-17 15:05:33 [restartedMain] INFO  c.k.s.ShoppingCartKApplication - Starting ShoppingCartKApplication using Java 17.0.3 on Kim_PerScholas with PID 11612 (C:\Users\mykim\Documents\spring-boot-workspace\shoppingCartK\target\classes started by mykim in C:\Users\mykim\Documents\spring-boot-workspace\shoppingCartK)
+""2022-10-17 15:05:33 [restartedMain] DEBUG c.k.s.ShoppingCartKApplication - Running with Spring Boot v3.0.0-M5, Spring v6.0.0-M6
+""2022-10-17 15:05:33 [restartedMain] INFO  c.k.s.ShoppingCartKApplication - No active profile set, falling back to 1 default profile: "default"
+""2022-10-17 15:05:34 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-10-17 15:05:34 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 33 ms. Found 4 JPA repository interfaces.
+""2022-10-17 15:05:34 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+""2022-10-17 15:05:34 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2022-10-17 15:05:34 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.0.23]
+""2022-10-17 15:05:34 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2022-10-17 15:05:34 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 597 ms
+""2022-10-17 15:05:34 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Starting...
+""2022-10-17 15:05:34 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-7 - Added connection org.mariadb.jdbc.Connection@28df0557
+""2022-10-17 15:05:34 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Start completed.
+""2022-10-17 15:05:34 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1050-42S01: Table 'spring_session' already exists
+""2022-10-17 15:05:34 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1061-42000: Duplicate key name 'SPRING_SESSION_IX1'
+""2022-10-17 15:05:34 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1061-42000: Duplicate key name 'SPRING_SESSION_IX2'
+""2022-10-17 15:05:34 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1061-42000: Duplicate key name 'SPRING_SESSION_IX3'
+""2022-10-17 15:05:34 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1050-42S01: Table 'spring_session_attributes' already exists
+""2022-10-17 15:05:34 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-10-17 15:05:34 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+""2022-10-17 15:05:34 [restartedMain] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+""2022-10-17 15:05:34 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-10-17 15:05:34 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-10-17 15:05:34 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7e050289, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@366ab075, org.springframework.security.web.context.SecurityContextHolderFilter@5a30919e, org.springframework.security.web.header.HeaderWriterFilter@65f8fa6a, org.springframework.security.web.authentication.logout.LogoutFilter@460e00ef, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1dbb0414, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@23fec90b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1f75cb4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1f221cf4, org.springframework.security.web.session.SessionManagementFilter@cc2b807, org.springframework.security.web.access.ExceptionTranslationFilter@4fd6cc27, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@427d6397]
+""2022-10-17 15:05:34 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-10-17 15:05:34 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+""2022-10-17 15:05:34 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+""2022-10-17 15:05:34 [restartedMain] INFO  o.s.s.a.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+""2022-10-17 15:05:35 [restartedMain] INFO  c.k.s.ShoppingCartKApplication - Started ShoppingCartKApplication in 1.316 seconds (process running for 292.814)
+""2022-10-17 15:05:35 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+""2022-10-17 15:07:40 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+""2022-10-17 15:07:40 [Thread-27] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+""2022-10-17 15:07:40 [Thread-27] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-7 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.3/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.3/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.3/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.3/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.3/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.3/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.3/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.3/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.3/java.lang.Thread.run(Thread.java:833)
+""2022-10-17 15:07:40 [Thread-27] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-10-17 15:07:40 [Thread-27] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Shutdown initiated...
+""2022-10-17 15:07:40 [Thread-27] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Shutdown completed.
+""2022-10-17 15:07:40 [restartedMain] INFO  c.k.s.ShoppingCartKApplication - Starting ShoppingCartKApplication using Java 17.0.3 on Kim_PerScholas with PID 11612 (C:\Users\mykim\Documents\spring-boot-workspace\shoppingCartK\target\classes started by mykim in C:\Users\mykim\Documents\spring-boot-workspace\shoppingCartK)
+""2022-10-17 15:07:40 [restartedMain] DEBUG c.k.s.ShoppingCartKApplication - Running with Spring Boot v3.0.0-M5, Spring v6.0.0-M6
+""2022-10-17 15:07:40 [restartedMain] INFO  c.k.s.ShoppingCartKApplication - No active profile set, falling back to 1 default profile: "default"
+""2022-10-17 15:07:40 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-10-17 15:07:40 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18 ms. Found 4 JPA repository interfaces.
+""2022-10-17 15:07:41 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+""2022-10-17 15:07:41 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2022-10-17 15:07:41 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.0.23]
+""2022-10-17 15:07:41 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2022-10-17 15:07:41 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 329 ms
+""2022-10-17 15:07:41 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Starting...
+""2022-10-17 15:07:41 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-8 - Added connection org.mariadb.jdbc.Connection@75cd2f48
+""2022-10-17 15:07:41 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Start completed.
+""2022-10-17 15:07:41 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1050-42S01: Table 'spring_session' already exists
+""2022-10-17 15:07:41 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1061-42000: Duplicate key name 'SPRING_SESSION_IX1'
+""2022-10-17 15:07:41 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1061-42000: Duplicate key name 'SPRING_SESSION_IX2'
+""2022-10-17 15:07:41 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1061-42000: Duplicate key name 'SPRING_SESSION_IX3'
+""2022-10-17 15:07:41 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1050-42S01: Table 'spring_session_attributes' already exists
+""2022-10-17 15:07:41 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-10-17 15:07:41 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+""2022-10-17 15:07:41 [restartedMain] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+""2022-10-17 15:07:41 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-10-17 15:07:41 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-10-17 15:07:41 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@25428d24, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@352966f, org.springframework.security.web.context.SecurityContextHolderFilter@37e87b69, org.springframework.security.web.header.HeaderWriterFilter@3d02376c, org.springframework.security.web.authentication.logout.LogoutFilter@687d6c9e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@28c2f62b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@530d4676, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7f18b22c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7c45715, org.springframework.security.web.session.SessionManagementFilter@81d7b8f, org.springframework.security.web.access.ExceptionTranslationFilter@5bd7fad8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4248db53]
+""2022-10-17 15:07:41 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-10-17 15:07:41 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+""2022-10-17 15:07:41 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+""2022-10-17 15:07:41 [restartedMain] INFO  o.s.s.a.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+""2022-10-17 15:07:41 [restartedMain] INFO  c.k.s.ShoppingCartKApplication - Started ShoppingCartKApplication in 0.801 seconds (process running for 419.286)
+""2022-10-17 15:07:41 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+""2022-10-17 15:07:51 [RMI TCP Connection(24)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+""2022-10-17 15:07:51 [RMI TCP Connection(24)-127.0.0.1] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+""2022-10-17 15:07:51 [RMI TCP Connection(24)-127.0.0.1] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-8 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.3/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.3/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.3/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.3/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.3/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.3/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.3/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.3/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.3/java.lang.Thread.run(Thread.java:833)
+""2022-10-17 15:07:51 [RMI TCP Connection(24)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-10-17 15:07:51 [RMI TCP Connection(24)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Shutdown initiated...
+""2022-10-17 15:07:51 [RMI TCP Connection(24)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Shutdown completed.
+""2022-10-17 15:07:56 [restartedMain] INFO  c.k.s.ShoppingCartKApplication - Starting ShoppingCartKApplication using Java 17.0.3 on Kim_PerScholas with PID 41204 (C:\Users\mykim\Documents\spring-boot-workspace\shoppingCartK\target\classes started by mykim in C:\Users\mykim\Documents\spring-boot-workspace\shoppingCartK)
+""2022-10-17 15:07:56 [restartedMain] DEBUG c.k.s.ShoppingCartKApplication - Running with Spring Boot v3.0.0-M5, Spring v6.0.0-M6
+""2022-10-17 15:07:56 [restartedMain] INFO  c.k.s.ShoppingCartKApplication - No active profile set, falling back to 1 default profile: "default"
+""2022-10-17 15:07:57 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+""2022-10-17 15:07:57 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+""2022-10-17 15:07:57 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-10-17 15:07:57 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 49 ms. Found 4 JPA repository interfaces.
+""2022-10-17 15:07:58 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+""2022-10-17 15:07:58 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2022-10-17 15:07:58 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.0.23]
+""2022-10-17 15:07:58 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2022-10-17 15:07:58 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1432 ms
+""2022-10-17 15:07:58 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2022-10-17 15:07:58 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@2e003982
+""2022-10-17 15:07:58 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2022-10-17 15:07:58 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1050-42S01: Table 'spring_session' already exists
+""2022-10-17 15:07:58 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1061-42000: Duplicate key name 'SPRING_SESSION_IX1'
+""2022-10-17 15:07:58 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1061-42000: Duplicate key name 'SPRING_SESSION_IX2'
+""2022-10-17 15:07:58 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1061-42000: Duplicate key name 'SPRING_SESSION_IX3'
+""2022-10-17 15:07:58 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1050-42S01: Table 'spring_session_attributes' already exists
+""2022-10-17 15:07:58 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-10-17 15:07:58 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.3.Final
+""2022-10-17 15:07:58 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+""2022-10-17 15:07:59 [restartedMain] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+""2022-10-17 15:07:59 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-10-17 15:07:59 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-10-17 15:08:00 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4473df8a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@289376de, org.springframework.security.web.context.SecurityContextHolderFilter@2b87f4f2, org.springframework.security.web.header.HeaderWriterFilter@59c28bfb, org.springframework.security.web.authentication.logout.LogoutFilter@6cde0948, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@51ea223e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@485a0b7f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@20932198, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@e83a4f1, org.springframework.security.web.session.SessionManagementFilter@54528bc7, org.springframework.security.web.access.ExceptionTranslationFilter@2b70a120, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@174f8d6a]
+""2022-10-17 15:08:00 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-10-17 15:08:01 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+""2022-10-17 15:08:01 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+""2022-10-17 15:08:01 [restartedMain] INFO  o.s.s.a.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+""2022-10-17 15:08:01 [restartedMain] INFO  c.k.s.ShoppingCartKApplication - Started ShoppingCartKApplication in 4.654 seconds (process running for 5.385)
+""2022-10-17 15:08:05 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2022-10-17 15:08:05 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+""2022-10-17 15:08:05 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+""2022-10-17 15:08:21 [http-nio-8080-exec-1] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+"org.springframework.core.convert.ConversionFailedException: Failed to convert from type [java.lang.Object] to type [byte[]] for value 'com.kim.shoppingcart.service.impl.CartServiceImpl@5ae85efc'
+	at org.springframework.core.convert.support.ConversionUtils.invokeConverter(ConversionUtils.java:47)
+	at org.springframework.core.convert.support.GenericConversionService.convert(GenericConversionService.java:192)
+	at org.springframework.session.jdbc.JdbcIndexedSessionRepository.serialize(JdbcIndexedSessionRepository.java:620)
+	at org.springframework.session.jdbc.JdbcIndexedSessionRepository.lambda$insertSessionAttributes$5(JdbcIndexedSessionRepository.java:505)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:963)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.session.jdbc.JdbcIndexedSessionRepository.insertSessionAttributes(JdbcIndexedSessionRepository.java:501)
+	at org.springframework.session.jdbc.JdbcIndexedSessionRepository$JdbcSession.lambda$save$11(JdbcIndexedSessionRepository.java:852)
+	at org.springframework.transaction.support.TransactionOperations.lambda$executeWithoutResult$0(TransactionOperations.java:68)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140)
+	at org.springframework.transaction.support.TransactionOperations.executeWithoutResult(TransactionOperations.java:67)
+	at org.springframework.session.jdbc.JdbcIndexedSessionRepository$JdbcSession.save(JdbcIndexedSessionRepository.java:834)
+	at org.springframework.session.jdbc.JdbcIndexedSessionRepository.save(JdbcIndexedSessionRepository.java:413)
+	at org.springframework.session.jdbc.JdbcIndexedSessionRepository.save(JdbcIndexedSessionRepository.java:133)
+	at org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper.commitSession(SessionRepositoryFilter.java:226)
+	at org.springframework.session.web.http.SessionRepositoryFilter.doFilterInternal(SessionRepositoryFilter.java:145)
+	at org.springframework.session.web.http.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:82)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:356)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:867)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1762)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.springframework.core.serializer.support.SerializationFailedException: Failed to serialize object using DefaultSerializer
+	at org.springframework.core.serializer.support.SerializingConverter.convert(SerializingConverter.java:64)
+	at org.springframework.core.serializer.support.SerializingConverter.convert(SerializingConverter.java:33)
+	at org.springframework.core.convert.support.GenericConversionService$ConverterAdapter.convert(GenericConversionService.java:386)
+	at org.springframework.core.convert.support.ConversionUtils.invokeConverter(ConversionUtils.java:41)
+	... 40 common frames omitted
+Caused by: java.lang.IllegalArgumentException: DefaultSerializer requires a Serializable payload but received an object of type [com.kim.shoppingcart.service.impl.CartServiceImpl$$SpringCGLIB$$1]
+	at org.springframework.core.serializer.DefaultSerializer.serialize(DefaultSerializer.java:43)
+	at org.springframework.core.serializer.Serializer.serializeToByteArray(Serializer.java:56)
+	at org.springframework.core.serializer.support.SerializingConverter.convert(SerializingConverter.java:60)
+	... 43 common frames omitted
+"2022-10-17 15:08:21 [http-nio-8080-exec-1] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] threw exception
+"org.springframework.core.convert.ConversionFailedException: Failed to convert from type [java.lang.Object] to type [byte[]] for value 'com.kim.shoppingcart.service.impl.CartServiceImpl@5ae85efc'
+	at org.springframework.core.convert.support.ConversionUtils.invokeConverter(ConversionUtils.java:47)
+	at org.springframework.core.convert.support.GenericConversionService.convert(GenericConversionService.java:192)
+	at org.springframework.session.jdbc.JdbcIndexedSessionRepository.serialize(JdbcIndexedSessionRepository.java:620)
+	at org.springframework.session.jdbc.JdbcIndexedSessionRepository.lambda$insertSessionAttributes$5(JdbcIndexedSessionRepository.java:505)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:963)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.session.jdbc.JdbcIndexedSessionRepository.insertSessionAttributes(JdbcIndexedSessionRepository.java:501)
+	at org.springframework.session.jdbc.JdbcIndexedSessionRepository$JdbcSession.lambda$save$11(JdbcIndexedSessionRepository.java:852)
+	at org.springframework.transaction.support.TransactionOperations.lambda$executeWithoutResult$0(TransactionOperations.java:68)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140)
+	at org.springframework.transaction.support.TransactionOperations.executeWithoutResult(TransactionOperations.java:67)
+	at org.springframework.session.jdbc.JdbcIndexedSessionRepository$JdbcSession.save(JdbcIndexedSessionRepository.java:834)
+	at org.springframework.session.jdbc.JdbcIndexedSessionRepository.save(JdbcIndexedSessionRepository.java:413)
+	at org.springframework.session.jdbc.JdbcIndexedSessionRepository.save(JdbcIndexedSessionRepository.java:133)
+	at org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper.commitSession(SessionRepositoryFilter.java:226)
+	at org.springframework.session.web.http.SessionRepositoryFilter.doFilterInternal(SessionRepositoryFilter.java:145)
+	at org.springframework.session.web.http.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:82)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:691)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:443)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:367)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:295)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:387)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:233)
+	at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:328)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:153)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:356)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:867)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1762)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.springframework.core.serializer.support.SerializationFailedException: Failed to serialize object using DefaultSerializer
+	at org.springframework.core.serializer.support.SerializingConverter.convert(SerializingConverter.java:64)
+	at org.springframework.core.serializer.support.SerializingConverter.convert(SerializingConverter.java:33)
+	at org.springframework.core.convert.support.GenericConversionService$ConverterAdapter.convert(GenericConversionService.java:386)
+	at org.springframework.core.convert.support.ConversionUtils.invokeConverter(ConversionUtils.java:41)
+	... 43 common frames omitted
+Caused by: java.lang.IllegalArgumentException: DefaultSerializer requires a Serializable payload but received an object of type [com.kim.shoppingcart.service.impl.CartServiceImpl$$SpringCGLIB$$1]
+	at org.springframework.core.serializer.DefaultSerializer.serialize(DefaultSerializer.java:43)
+	at org.springframework.core.serializer.Serializer.serializeToByteArray(Serializer.java:56)
+	at org.springframework.core.serializer.support.SerializingConverter.convert(SerializingConverter.java:60)
+	... 46 common frames omitted
+"2022-10-17 15:08:21 [http-nio-8080-exec-1] ERROR o.a.c.c.C.[Tomcat].[localhost] - Exception Processing ErrorPage[errorCode=0, location=/error]
+"org.springframework.core.convert.ConversionFailedException: Failed to convert from type [java.lang.Object] to type [byte[]] for value 'com.kim.shoppingcart.service.impl.CartServiceImpl@5ae85efc'
+	at org.springframework.core.convert.support.ConversionUtils.invokeConverter(ConversionUtils.java:47)
+	at org.springframework.core.convert.support.GenericConversionService.convert(GenericConversionService.java:192)
+	at org.springframework.session.jdbc.JdbcIndexedSessionRepository.serialize(JdbcIndexedSessionRepository.java:620)
+	at org.springframework.session.jdbc.JdbcIndexedSessionRepository.lambda$insertSessionAttributes$5(JdbcIndexedSessionRepository.java:505)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:963)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
+	at org.springframework.session.jdbc.JdbcIndexedSessionRepository.insertSessionAttributes(JdbcIndexedSessionRepository.java:501)
+	at org.springframework.session.jdbc.JdbcIndexedSessionRepository$JdbcSession.lambda$save$11(JdbcIndexedSessionRepository.java:852)
+	at org.springframework.transaction.support.TransactionOperations.lambda$executeWithoutResult$0(TransactionOperations.java:68)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140)
+	at org.springframework.transaction.support.TransactionOperations.executeWithoutResult(TransactionOperations.java:67)
+	at org.springframework.session.jdbc.JdbcIndexedSessionRepository$JdbcSession.save(JdbcIndexedSessionRepository.java:834)
+	at org.springframework.session.jdbc.JdbcIndexedSessionRepository.save(JdbcIndexedSessionRepository.java:413)
+	at org.springframework.session.jdbc.JdbcIndexedSessionRepository.save(JdbcIndexedSessionRepository.java:133)
+	at org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper.commitSession(SessionRepositoryFilter.java:226)
+	at org.springframework.session.web.http.SessionRepositoryFilter.doFilterInternal(SessionRepositoryFilter.java:145)
+	at org.springframework.session.web.http.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:82)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:691)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:443)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:367)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:295)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:387)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:233)
+	at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:328)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:153)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:356)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:867)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1762)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.springframework.core.serializer.support.SerializationFailedException: Failed to serialize object using DefaultSerializer
+	at org.springframework.core.serializer.support.SerializingConverter.convert(SerializingConverter.java:64)
+	at org.springframework.core.serializer.support.SerializingConverter.convert(SerializingConverter.java:33)
+	at org.springframework.core.convert.support.GenericConversionService$ConverterAdapter.convert(GenericConversionService.java:386)
+	at org.springframework.core.convert.support.ConversionUtils.invokeConverter(ConversionUtils.java:41)
+	... 43 common frames omitted
+Caused by: java.lang.IllegalArgumentException: DefaultSerializer requires a Serializable payload but received an object of type [com.kim.shoppingcart.service.impl.CartServiceImpl$$SpringCGLIB$$1]
+	at org.springframework.core.serializer.DefaultSerializer.serialize(DefaultSerializer.java:43)
+	at org.springframework.core.serializer.Serializer.serializeToByteArray(Serializer.java:56)
+	at org.springframework.core.serializer.support.SerializingConverter.convert(SerializingConverter.java:60)
+	... 46 common frames omitted
+"2022-10-17 15:09:31 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+""2022-10-17 15:09:31 [Thread-5] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+""2022-10-17 15:09:31 [Thread-5] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+""2022-10-17 15:09:31 [Thread-5] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.3/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.3/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.3/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.3/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.3/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.3/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.3/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.3/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.3/java.lang.Thread.run(Thread.java:833)
+""2022-10-17 15:09:31 [Thread-5] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-10-17 15:09:31 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2022-10-17 15:09:31 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2022-10-17 15:09:31 [restartedMain] INFO  c.k.s.ShoppingCartKApplication - Starting ShoppingCartKApplication using Java 17.0.3 on Kim_PerScholas with PID 41204 (C:\Users\mykim\Documents\spring-boot-workspace\shoppingCartK\target\classes started by mykim in C:\Users\mykim\Documents\spring-boot-workspace\shoppingCartK)
+""2022-10-17 15:09:31 [restartedMain] DEBUG c.k.s.ShoppingCartKApplication - Running with Spring Boot v3.0.0-M5, Spring v6.0.0-M6
+""2022-10-17 15:09:31 [restartedMain] INFO  c.k.s.ShoppingCartKApplication - No active profile set, falling back to 1 default profile: "default"
+""2022-10-17 15:09:31 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-10-17 15:09:31 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22 ms. Found 4 JPA repository interfaces.
+""2022-10-17 15:09:31 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+""2022-10-17 15:09:31 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2022-10-17 15:09:31 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.0.23]
+""2022-10-17 15:09:31 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2022-10-17 15:09:31 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 293 ms
+""2022-10-17 15:09:31 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+""2022-10-17 15:09:31 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection org.mariadb.jdbc.Connection@4dcf46e
+""2022-10-17 15:09:31 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+""2022-10-17 15:09:31 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1050-42S01: Table 'spring_session' already exists
+""2022-10-17 15:09:31 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1061-42000: Duplicate key name 'SPRING_SESSION_IX1'
+""2022-10-17 15:09:31 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1061-42000: Duplicate key name 'SPRING_SESSION_IX2'
+""2022-10-17 15:09:31 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1061-42000: Duplicate key name 'SPRING_SESSION_IX3'
+""2022-10-17 15:09:31 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1050-42S01: Table 'spring_session_attributes' already exists
+""2022-10-17 15:09:31 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-10-17 15:09:31 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+""2022-10-17 15:09:31 [restartedMain] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+""2022-10-17 15:09:31 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-10-17 15:09:31 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-10-17 15:09:32 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@22f4b096, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@12502a8a, org.springframework.security.web.context.SecurityContextHolderFilter@3e844b70, org.springframework.security.web.header.HeaderWriterFilter@1497f6f2, org.springframework.security.web.authentication.logout.LogoutFilter@5e2a3e3b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@69449d9b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5c08eba3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7703b6b6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6f8af840, org.springframework.security.web.session.SessionManagementFilter@1cf5355e, org.springframework.security.web.access.ExceptionTranslationFilter@46a4895a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3f585fe7]
+""2022-10-17 15:09:32 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-10-17 15:09:32 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+""2022-10-17 15:09:32 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+""2022-10-17 15:09:32 [restartedMain] INFO  o.s.s.a.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+""2022-10-17 15:09:32 [restartedMain] INFO  c.k.s.ShoppingCartKApplication - Started ShoppingCartKApplication in 0.805 seconds (process running for 96.274)
+""2022-10-17 15:09:32 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
 "

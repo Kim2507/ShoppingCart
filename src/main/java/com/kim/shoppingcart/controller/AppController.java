@@ -10,9 +10,9 @@ public class AppController {
 		return "home";
 	}
 	
-	@GetMapping("/aboutus")
+	@GetMapping("/about_us")
 	public String showAboutUs() {
-		return "aboutus";
+		return "about_us";
 	}
 	
 	
