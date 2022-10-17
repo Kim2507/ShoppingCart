@@ -19,6 +19,7 @@ import com.kim.shoppingcart.model.Cart;
 import com.kim.shoppingcart.model.ProductDetails;
 import com.kim.shoppingcart.repository.CartRepository;
 import com.kim.shoppingcart.repository.ProductRepository;
+import com.kim.shoppingcart.repository.UserRepository;
 import com.kim.shoppingcart.service.CartService;
 
 import jakarta.persistence.EntityManager;
@@ -33,7 +34,8 @@ public class CartServiceImpl implements CartService {
 
 	@Autowired
 	CartRepository cartRepo;
-	
+	@Autowired
+	UserRepository userRepo;
 	@Autowired
 	EntityManager entityManager;
 
@@ -54,6 +56,11 @@ public class CartServiceImpl implements CartService {
         
 		query = query.setParameter(1, userId);
 		query.setParameter(1, userId);
+		if(query.getSingleResult()==null) {
+			Cart cart = new Cart();
+			cart.setUserID(userRepo.getReferenceById(userId));
+			cartRepo.save(cart);
+		}
 
         return (Cart)query.getSingleResult();
 		

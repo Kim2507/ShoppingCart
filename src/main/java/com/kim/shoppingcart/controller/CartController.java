@@ -64,10 +64,10 @@ public class CartController {
 		User user = userService.findUserByEmail(userName);
 		Long userId = user.getId();
 		Cart cart = cartService.findByUserID((long)userId);
-		//if cart null create new car
-		if(cart==null) {
-			cart = new Cart();
-		}
+//		//if cart null create new car
+//		if(cart==null) {
+//			cart = new Cart();
+//		}
 		
 		//Add product to cart
         cart.addProduct(productRepo.findById(1).get());
