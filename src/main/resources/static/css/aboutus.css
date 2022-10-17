@@ -1,0 +1,59 @@
+body{
+}
+
+.container{
+    display: grid;
+    height: 100%;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-area: "img p";
+}
+
+header{
+    text-align: center;
+    font-size: 70px;
+    font-weight: bold;
+}
+.img{
+    display: flex;
+    justify-content: space-around;
+
+}
+.img_control{
+    width:80%;
+    height:auto;
+    padding-top: 10px;
+
+}
+
+.img_end{
+    display:flex;
+    justify-self: end;
+
+
+}
+.paragraph{
+    font-size: 20px;
+}
+
+
+
+.blackout {
+    background-color: black;
+    color: white;
+  }
+  
+  .sizeing {
+    height: 25vh;
+    width: 100vw;
+    text-align: center;
+  }
+  
+  .textSize {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  .dalContainer {
+    display: flex;
+    justify-content: flex-start;
+  }

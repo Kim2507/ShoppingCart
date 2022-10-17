@@ -9,5 +9,5 @@ import com.kim.shoppingcart.service.CartService;
 
 @Repository
 public interface CartRepository extends JpaRepository<Cart, Integer>{
-
+	//CRUD 
 }

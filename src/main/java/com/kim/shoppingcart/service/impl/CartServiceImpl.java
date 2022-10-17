@@ -26,8 +26,8 @@ import jakarta.persistence.Query;
 
 
 @Service
-//@Scope(value = WebApplicationContext.SCOPE_SESSION, proxyMode = ScopedProxyMode.TARGET_CLASS)
-@Transactional
+//@ScopeproxyMode = ScopedProxyMode.TARGET_CLASS)
+ @Transactional
 public class CartServiceImpl implements CartService {
 
 	@Autowired

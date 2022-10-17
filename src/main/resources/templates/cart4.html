@@ -9,50 +9,35 @@
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
-	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	in tegrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
 	crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" th:href="@{/css/cart.css}">
 </head>
 <body>
 <form method="get" th:action="@{/checkout}">
-	<div class="item-display" th:each="mapEntry: ${cart.getProductsMap}">
+	<div class="container" th:each="mapEntry: ${cart.getProductsMap}">
 		<div class="item-display" th:text="${mapEntry.key.getName}"></div>
-		<p>Price each</p><div class="item-display" th:text="${mapEntry.key.getPrice}"></div>
-		<p>Quantity</p><div class="item-display" th:text="${mapEntry.value}"></div>
+		<p class="item-display">Price each: </p><div class="item-display" th:text="${mapEntry.key.getPrice}"></div>
+		<p>Quantity</p>
+		<div class="item-display" th:text="${mapEntry.value}"></div>
 	</div>
 	
 	<p>PreTax</p><div th:text="${cart.getPreTaxPrice}"></div>
 	<p>Total</p><div th:text="${cart.getTotalPrice}">Total</div>
 	
-	<button type="submit">Checkout</button>
+	<button type="submit">Continue To Checkout</button>
 </form>
 	<!-- <form method="post" th:action="@{/saveUpdatedCart}" th:object="${cart}">
 			<input th:field="*{mapEntry.key.getProductId}"></span>
+			
 		</form> 
 		<span th:text="${mapEntry.key.getName}"></span>
-		<button onclick="increment()">+</button>
+		<button th:onclick="increment()">+</button>
 		<span id="counting" th:text="${mapEntry.value}"></span>
-		<button onclick="increment()">-</button> -->
+		<button th:onclick="increment()">-</button> -->
 	<!-- <label class="form-label">Quantity</label> 
 	<input placeholder="${mapEntry.value}" class="23form-control" id="quantity" name="quantity" type="text" /> -->
 
- <!-- <script th:inline="javascript">
-            //initialising a variable name data
-            var data = 0;
-  
-            //printing default value of data that is 0 in h2 tag
-            document.getElementById("counting").innerText = data;
-  
-            //creation of increment function
-            function increment() {
-                data = data + 1;
-                document.getElementById("counting").innerText = data;
-            }
-            //creation of decrement function
-            function decrement() {
-                data = data - 1;
-                document.getElementById("counting").innerText = data;
-            }
-        </script> -->
+	 
 </body>
 </html>

@@ -69,11 +69,14 @@ public class CartController {
 			cart = new Cart();
 		}
 		//Add product to cart
-		cart.addProduct(productRepo.findById(1).get());
-		cart.getProductsMap();
+        cart.addProduct(productRepo.findById(1).get());
+        cart.getProductsMap();
 		model.addAttribute("cart",cart);
+		
 		// Save updated cart 
-		cartRepo.save(cart);
+ 		//int quantity=cart.getProductsMap().get(productRepo.findById(1).get())  ;
+		//model.addAttribute("quantity",quantity);
+		//cartRepo.save(cart);
 		return "cart4";
 	}
 	

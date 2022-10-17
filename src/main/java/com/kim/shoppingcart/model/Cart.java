@@ -31,9 +31,11 @@ public class Cart implements Serializable{
 	private Set<ProductDetails> productsList;
 
 	@Transient
-	private Map<ProductDetails,Integer> productsMap;
+	private static Map<ProductDetails,Integer> productsMap;
 	
-	public Cart() {}
+	public Cart() {
+		productsMap = new HashMap<>();                                                                
+	}
 	
 	public Cart(Integer id) {
 		super();
@@ -52,33 +54,44 @@ public class Cart implements Serializable{
 	
 
 	public void addProduct(ProductDetails product) {
+		// Add to Set
 		productsList.add(product);
+		//Add to HashMap
+		if (productsMap.containsKey(product)) {
+			productsMap.replace(product, productsMap.get(product) + 1);
+        } else {
+        	productsMap.put(product, 1);
+        } 
 	}
 
     public void removeProduct(ProductDetails product) {
-    	productsList.remove(product);
+    	//Remove from list
+    	productsList.remove(product); 
+    	//Remove from hashmap 
+    	 if (productsMap.containsKey(product)) {
+             if (productsMap.get(product) > 1)
+            	 productsMap.replace(product, productsMap.get(product) - 1);
+             else if (productsMap.get(product) == 1) {
+            	 productsMap.remove(product);
+             }
+         }
     }
 	
 	public Map<ProductDetails,Integer> getProductsMap(){
-		productsMap = new HashMap<>();
-		for(ProductDetails p : getProductsList()) {
-			Integer productCounter = productsMap.get(p);
-			productsMap.put(p,(productCounter==null)?1:productCounter+1);
-		}
 		return productsMap;
 	}
 	
 	
 
 	public double getPreTaxPrice() {
-		productsMap.forEach((key,value)->{
+		getProductsMap().forEach((key,value)->{
 			preTaxPrice += key.getPrice()*value;
 		});
 		return preTaxPrice;
 	}
 	
 	public double getTotalPrice() {
-		totalPrice= preTaxPrice*(1+TAX_RATE);
+		totalPrice= getPreTaxPrice()*(1+TAX_RATE);
 		return totalPrice;
 	}
 
@@ -97,7 +110,7 @@ public class Cart implements Serializable{
 	}
 
 	public Set<ProductDetails> getProductsList() {
-		return productsList;
+		return productsList;                          
 	}
 
 	public void setProductsList(Set<ProductDetails> productsList) {
