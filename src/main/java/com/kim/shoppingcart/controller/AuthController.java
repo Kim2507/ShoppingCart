@@ -15,7 +15,9 @@ import com.kim.shoppingcart.model.User;
 import com.kim.shoppingcart.service.UserService;
 
 import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Controller
 public class AuthController {
 	@Autowired

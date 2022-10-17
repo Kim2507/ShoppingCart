@@ -125,7 +125,14 @@ public class UserServiceImpl implements UserService{
 		query.setParameter(1, name+"%");
         return query.getResultList();
 	}
+
+	@Override
+	public void deleteUser(Long id) {
+		userRepo.deleteById(id);
+		
+	}
 	 
+	
 
 	 
 	
