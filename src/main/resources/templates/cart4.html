@@ -12,10 +12,14 @@
 	in tegrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
 	crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" th:href="@{/css/cart.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/check_out.css}">
 </head>
 <body>
-<form method="get" th:action="@{/checkout}">
-<div th:text="${cart.getProductsList.size}"></div>
+<form class="payment" method="get" th:action="@{/checkout}">
+<div th:text="${cart.getProductCounter}"></div>
+<div th:text="${product.getName}"></div>
+
+
 	<!-- <div class="container" th:each="mapEntry: ${cart.getProduct.toString}">
 		<div class="item-display" th:text="${mapEntry.key.getName}"></div>
 		<p class="item-display">Price each: </p><div class="item-display" th:text="${mapEntry.key.getPrice}"></div>

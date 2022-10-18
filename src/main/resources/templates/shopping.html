@@ -46,14 +46,14 @@
          <form method="post" role="form" th:action="@{/addedGT}">
           <div class="title">GREEN TEA</div>
          <img class = "img" th:src="@{/images/green_tea.png}" alt="green-tea">
-          <button class="btn btn-primary" type="submit">Save to cart</button>
+          <button class="btn btn-primary" type="submit" onclick="alert('OUT OF STOCK')";>Save to cart</button>
           </form>
         </div>
         <div class="column" >
          <form method="post" role="form" th:action="@{/addedCM}">
           <div class="title">CHAM</div>
          <img class = "img" th:src="@{/images/chamomile.png}" alt="chamomile">
-          <button class="btn btn-primary" type="submit">Save to cart</button>
+          <button class="btn btn-primary" type="submit" onclick="alert('OUT OF STOCK')";>Save to cart</button>
           </form>
         </div>
       </div>

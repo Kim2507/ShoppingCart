@@ -30,22 +30,21 @@ public class UserServiceImplTest {
 	
 
 	
-//	@Test // succeed
-//	public void testFindUserByEmail() {
-//		User expected = new User();
-//		expected.setEmail("kim@gmail.com");
-//		User actual = userService.findUserByEmail("kim@gmail.com");
-//		assertEquals(expected.getEmail(),actual.getEmail());
-//	}
-//	
-//	@Test // succeed
-//	public void testFindAllUsers() {
-//		List<User> users = userRepo.findAll();
-//	}
+	@Test 
+	public void testFindUserByEmail() {
+		User expected = new User();
+		expected.setEmail("kim@gmail.com");
+		User actual = userService.findUserByEmail("kim@gmail.com");
+		assertEquals(expected.getEmail(),actual.getEmail());
+	}
+	
+	@Test 
+	public void testFindAllUsers() {
+		assertNotNull(userRepo.findAll());
+	}
 	
 	@ParameterizedTest
-	@ValueSource(strings ={"Malden","Melrose","Saugus"})
-	@Test 
+	@ValueSource(strings ={"Malden","Melrose","Saugus"}) 
 	public void testFindUserByCity(String str) {
 		assertNotNull(userService.findUserByCity(str));
 	}

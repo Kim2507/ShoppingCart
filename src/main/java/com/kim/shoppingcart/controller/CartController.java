@@ -61,14 +61,20 @@ public class CartController {
 		// get the ID of the authenticated user
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String userName = auth.getName();
+		// Find user by email 
 		User user = userService.findUserByEmail(userName);
+		// Get user id
 		Long userId = user.getId();
-		Cart cart = cartService.findByUserID((long)userId);
-//
-//		//Add product to cart
-        cart.addProduct(productRepo.findById(1).get());
-//		//cart.setProduct(productRepo.findById(1).get());
+		//Find user cart by user id
+		Cart cart = cartService.findByUserID(userId);
+		System.out.println(cart);
+		//Product
+		ProductDetails product = productRepo.findById((long) 1).get();
+	
+		//Add product to cart
+        cart.addProduct(product);
 		model.addAttribute("cart",cart);
+		model.addAttribute("product",product);
 		cartRepo.save(cart);
 		return "cart4";
 	}

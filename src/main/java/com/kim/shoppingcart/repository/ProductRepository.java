@@ -6,6 +6,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import com.kim.shoppingcart.model.ProductDetails;
 
 @RepositoryRestResource(collectionResourceRel = "products", path = "products")
-public interface ProductRepository extends JpaRepository<ProductDetails, Integer> {
+public interface ProductRepository extends JpaRepository<ProductDetails, Long> {
 
 }

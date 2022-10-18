@@ -25,8 +25,8 @@ import jakarta.persistence.Query;
 
 
 @Service
-@Scope(value = WebApplicationContext.SCOPE_SESSION, proxyMode = ScopedProxyMode.TARGET_CLASS)
-@Transactional
+//@Scope(value = WebApplicationContext.SCOPE_SESSION, proxyMode = ScopedProxyMode.TARGET_CLASS)
+//@Transactional
 public class CartServiceImpl implements CartService {
 
 	@Autowired
@@ -42,26 +42,29 @@ public class CartServiceImpl implements CartService {
 	}
 
 	@Override
-	public Optional<Cart> findById(Integer id) {
+	public Optional<Cart> findById(Long id) {
 		return cartRepo.findById(id);
 	}
 
 	@Override
 	public Cart findByUserID(Long userId) {
-		Query query = entityManager.createNativeQuery("SELECT * FROM shoppingcart.cart " +
-               "WHERE userid_id = ?", Cart.class);
-        
-		//query = query.setParameter(1, userId);
-		query.setParameter(1, userId);
-		List<Cart> cart  = query.getResultList();//getSingleResult();
+//		Query query = entityManager.createNativeQuery("SELECT * FROM shoppingcart.cart as c " +
+//               "WHERE c.user_id = ?1", Cart.class);
+//        //Query query = entityManager.createNamedQuery("select c from Cart c where c.userID LIKE :userid_id");
+//		//query = query.setParameter(1, userId);
+//		query.setParameter(1, userId);
+//        //query.setParameter("userid_id", userId);
+//		List<Cart> cart  = query.getResultList();//getSingleResult();
 		//if(query.getSingleResult()==null) {
-		if(cart.isEmpty()) {
+		Cart carts = cartRepo.findByUserId(userId);
+		if(carts==null) {
 			Cart cart2 = new Cart();
 			cart2.setUserID(userRepo.findById(userId).get());
-			cartRepo.save(cart2);
+			return cartRepo.save(cart2);
 		}
+		
 
-        return (Cart)query.getSingleResult();
+        return carts;
 		
 		
 	}

@@ -11,6 +11,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.kim.shoppingcart.dto.UserDto;
 import com.kim.shoppingcart.model.User;
@@ -29,11 +30,7 @@ public class AuthController {
         this.userService = userService;
     }
 	
-//	@GetMapping("/")
-//	public String home() {
-//		return "index";
-//	}
-	
+
 	 // handler method to handle login request
     @GetMapping("/login")
     public String login(){
@@ -73,21 +70,16 @@ public class AuthController {
 	}
 	
 	
-	@GetMapping
-	public void getLogs() {
+	@GetMapping("/loginInfo")
+	@ResponseBody
+	public String getLogs() {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String userName = auth.getName();
 		User user = userService.findUserByEmail(userName);
 		log.info(userName);
 		log.info(user.getName());
+		return user.getName();
 	}
 	
-	 // handler method to handle list of users
-//    @GetMapping("/users")
-//    public String users(Model model){
-//        List<UserDto> users = userService.findAllUsers();
-//        model.addAttribute("users", users);
-//        return "users";
-//    }
 
 }

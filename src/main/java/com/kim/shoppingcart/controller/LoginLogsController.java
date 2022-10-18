@@ -29,13 +29,6 @@ public class LoginLogsController {
 
 	}
 	
-	@GetMapping("/userInfo")
-	public String userInfo() {
-		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		log.info(auth.getName());
-	    User loginUser = userService.findUserByEmail(auth.getName());
-      	log.info("&&&&&&&&&&&&&&&" + loginUser.getName() );
-      	return "Hello Kim"; 
-	}
+	
 
 }
