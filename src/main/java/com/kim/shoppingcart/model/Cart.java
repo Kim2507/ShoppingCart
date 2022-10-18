@@ -31,8 +31,11 @@ public class Cart implements Serializable{
 //	private ProductDetails product;
 	
 //	@OneToMany(targetEntity=ProductDetails.class)
+//	private List<ProductDetails> productsList;
+	
+	@OneToMany(mappedBy="cart",cascade=CascadeType.ALL,fetch=FetchType.EAGER,targetEntity=ProductDetails.class)
 	private List<ProductDetails> productsList;
-
+	
 	@Transient
 	private static Map<ProductDetails,Integer> productsMap;
 	
@@ -55,14 +58,8 @@ public class Cart implements Serializable{
 
 	
 	public void addProduct(ProductDetails product) {
-		// Add to List
-		productsList.add(product);
-		//Add to HashMap
-		if (productsMap.containsKey(product)) {
-			productsMap.replace(product, productsMap.get(product) + 1);
-        } else {
-        	productsMap.put(product, 1);
-        } 
+		getProductsList().add(product);
+		product.setCart(this);
 	}
 
     public void removeProduct(ProductDetails product) {
@@ -137,7 +134,10 @@ public class Cart implements Serializable{
 //	}
 
 	public List<ProductDetails> getProductsList() {
-		return productsList;
+		if(this.productsList==null) {
+			this.productsList = new ArrayList<>();
+		}
+		return this.productsList;
 	}
 
 	public void setProductsList(List<ProductDetails> productsList) {

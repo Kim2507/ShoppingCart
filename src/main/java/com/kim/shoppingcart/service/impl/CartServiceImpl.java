@@ -2,10 +2,7 @@ package com.kim.shoppingcart.service.impl;
 
 import java.math.BigDecimal;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,15 +48,17 @@ public class CartServiceImpl implements CartService {
 
 	@Override
 	public Cart findByUserID(Long userId) {
-		Query query = entityManager.createNativeQuery("SELECT * FROM shoppingcart1.cart " +
-                "WHERE userid_id = ?", Cart.class);
+		Query query = entityManager.createNativeQuery("SELECT * FROM shoppingcart.cart " +
+               "WHERE userid_id = ?", Cart.class);
         
-		query = query.setParameter(1, userId);
+		//query = query.setParameter(1, userId);
 		query.setParameter(1, userId);
-		if(query.getSingleResult()==null) {
-			Cart cart = new Cart();
-			cart.setUserID(userRepo.getReferenceById(userId));
-			cartRepo.save(cart);
+		List<Cart> cart  = query.getResultList();//getSingleResult();
+		//if(query.getSingleResult()==null) {
+		if(cart.isEmpty()) {
+			Cart cart2 = new Cart();
+			cart2.setUserID(userRepo.findById(userId).get());
+			cartRepo.save(cart2);
 		}
 
         return (Cart)query.getSingleResult();

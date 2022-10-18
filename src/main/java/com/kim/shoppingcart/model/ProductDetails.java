@@ -29,8 +29,9 @@ public class ProductDetails implements Serializable {
 	private double price;
 	private int stockQuantity;
 
-//	@ManyToOne
-//	private Cart cart;
+	@ManyToOne
+	@JoinColumn(name="cart_id")
+	private Cart cart;
 	
 	public ProductDetails(String name, String description, double price, int quantity) {
 		super();

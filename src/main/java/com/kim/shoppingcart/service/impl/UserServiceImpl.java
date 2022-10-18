@@ -112,7 +112,7 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public List<User> findUserByState(String state) {
-		Query query = entityManager.createNativeQuery("SELECT * FROM shoppingcart1.users " +
+		Query query = entityManager.createNativeQuery("SELECT * FROM shoppingcart.users " +
                 "WHERE state LIKE ?", User.class);
 		query.setParameter(1, state+"%");
         return query.getResultList();
@@ -120,7 +120,7 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public List<User> findUserByName(String name) {
-		Query query = entityManager.createNativeQuery("SELECT * FROM shoppingcart1.users " +
+		Query query = entityManager.createNativeQuery("SELECT * FROM shoppingcart.users " +
                 "WHERE name LIKE ?", User.class);
 		query.setParameter(1, name+"%");
         return query.getResultList();

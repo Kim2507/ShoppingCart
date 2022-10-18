@@ -15,6 +15,7 @@
 </head>
 <body>
 <form method="get" th:action="@{/checkout}">
+<div th:text="${cart.getProductsList.size}"></div>
 	<!-- <div class="container" th:each="mapEntry: ${cart.getProduct.toString}">
 		<div class="item-display" th:text="${mapEntry.key.getName}"></div>
 		<p class="item-display">Price each: </p><div class="item-display" th:text="${mapEntry.key.getPrice}"></div>
