@@ -64,21 +64,11 @@ public class CartController {
 		User user = userService.findUserByEmail(userName);
 		Long userId = user.getId();
 		Cart cart = cartService.findByUserID((long)userId);
-//		//if cart null create new car
-//		if(cart==null) {
-//			cart = new Cart();
-//		}
-		
-		//Add product to cart
+//
+//		//Add product to cart
         cart.addProduct(productRepo.findById(1).get());
-        System.out.println(cart.getProductsList().size());
-        //cart.getProductsMap();
+//		//cart.setProduct(productRepo.findById(1).get());
 		model.addAttribute("cart",cart);
-		
-		// Save updated cart 
- 		//int quantity=cart.getProductsMap().get(productRepo.findById(1).get())  ;
-		//model.addAttribute("quantity",quantity);
-		//cartRepo.deleteById(cart.getId());
 		cartRepo.save(cart);
 		return "cart4";
 	}
@@ -89,8 +79,14 @@ public class CartController {
 		String userName = auth.getName();
 		User user = userService.findUserByEmail(userName);
 		model.addAttribute("user",user);
-		return "checkout";
+		return "check_out";
 	}
+	
+	@GetMapping("/orderSuccess")
+	public String showOrderSuccess(Model model) {
+		return "order_success";
+	}
+	
 	
 	
 	

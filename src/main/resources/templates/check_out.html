@@ -16,17 +16,18 @@
 </head>
 <body>
 
-<section>
+<section class="shipping">
+	<h3>Shipping Address</h3>
 	<div th:text="${user.getName}"></div>
 	<div th:text="${user.getAddress}"></div>
 	<div th:text="${user.getCity}"></div>
 	<div th:text="${user.getState}"></div>
 	<div th:text="${user.getZipCode}"></div>
 </section>
-	<form>
+	<form method="get" th:action="@{/orderSuccess}">
 		<div class="col">
 			<h4>
-				<b>Payment</b>
+				<h3>Payment</h3>
 			</h4>
 		</div>
 		<div class="input-group mb-3">

@@ -27,7 +27,10 @@ public class Cart implements Serializable{
 	@OneToOne(cascade=CascadeType.ALL)
 	private User userID;
 	
-	@OneToMany(targetEntity=ProductDetails.class, cascade=CascadeType.ALL,mappedBy="cart")
+//	@OneToOne(cascade=CascadeType.ALL)
+//	private ProductDetails product;
+	
+//	@OneToMany(targetEntity=ProductDetails.class)
 	private List<ProductDetails> productsList;
 
 	@Transient
@@ -75,6 +78,7 @@ public class Cart implements Serializable{
          }
     }
 	
+	
 	public Map<ProductDetails,Integer> getProductsMap(){
 		return productsMap;
 	}
@@ -83,6 +87,7 @@ public class Cart implements Serializable{
 		getProductsMap().forEach((key,value)->{
 			preTaxPrice += key.getPrice()*value;
 		});
+		//preTaxPrice = product.getPrice();
 		return preTaxPrice;
 	}
 	
@@ -122,6 +127,14 @@ public class Cart implements Serializable{
 	public void setProductsMap(Map<ProductDetails, Integer> productsMap) {
 		this.productsMap = productsMap;
 	}
+
+//	public ProductDetails getProduct() {
+//		return product;
+//	}
+//
+//	public void setProduct(ProductDetails product) {
+//		this.product = product;
+//	}
 
 	public List<ProductDetails> getProductsList() {
 		return productsList;

@@ -20,30 +20,33 @@ public class ProductServiceImplTest {
 	@Autowired
 	ProductRepository productRepo;
 	
-	@Test
-	public void testUpdateProduct() {
-		ProductDetails p = productRepo.getReferenceById(2);
-		p.setPrice(6.5);
-		p.setStockQuantity(9);
-		productRepo.save(p);
-		
-	}
-	
 //	@Test
-//	public void testGetProducts() {
-//		//Optional<ProductDetails> btO = productService.findById(1);
-//		ProductDetails bt = productRepo.findById(1).get();
-//		//Optional<ProductDetails> gtO = productService.findById(2);
-//		ProductDetails gt = productRepo.findById(2).get();
-//		ProductDetails btE = new ProductDetails();
-//		btE.setName("black tea");
-//		ProductDetails gtE = new ProductDetails();
-//		gtE.setName("green tea");
-//		assertEquals(btE.getName(),bt.getName());
-//		assertEquals(gtE.getName(),gt.getName());
-//		
+//	public void testUpdateProduct() {
+//		ProductDetails p = productRepo.getReferenceById(2);
+//		p.setPrice(6.5);
+//		p.setStockQuantity(9);
+//		productRepo.save(p);
 //		
 //	}
+	
+	@Test
+	public void testGetProducts() {
+		//Optional<ProductDetails> btO = productService.findById(1);
+		ProductDetails bt = productRepo.findById(1).get();
+		//Optional<ProductDetails> gtO = productService.findById(2);
+		
+		ProductDetails btE = new ProductDetails();
+		btE.setName("Black Tea");
+		assertEquals(btE.getName(),bt.getName());
+		
+//		ProductDetails gt = productRepo.findById(2).get();
+//		ProductDetails gtE = new ProductDetails();
+//		gtE.setName("green tea");
+//		
+//		assertEquals(gtE.getName(),gt.getName());
+//		
+		
+	}
 	
 
 }
