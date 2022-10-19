@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -27,12 +28,11 @@ import com.kim.shoppingcart.service.impl.UserServiceImpl;
 
 @Controller
 public class CartController {
-	@Autowired
-	CartRepository cartRepo;
+	
 	@Autowired
 	CartServiceImpl cartService;
 	@Autowired
-	ProductRepository productRepo;
+	ProductServiceImpl productService;
 	
 	@Autowired
 	CustomUserDetailsService userDetailsService;
@@ -45,52 +45,49 @@ public class CartController {
 		return "shopping";
 	}
 	
-	
-//	@GetMapping("/currentuserId")
-//	@ResponseBody
-//	public Long currentUserId() {
-//		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-//		String userName = auth.getName();
-//		User user = userService.findUserByEmail(userName);
-//		return user.getId();
-//		
-//	}
-	@PostMapping("/addedBT")
-	public String addBTToCart(Model model) {
-
+	public User gettingAuthentication() {
 		// get the ID of the authenticated user
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String userName = auth.getName();
+		// Find user by email
 		User user = userService.findUserByEmail(userName);
+		return user;
+	}
+	
+	@PostMapping("/addedBT")
+	public String addBTToCart(Model model) {
+		User user = gettingAuthentication();
+		// Get user id
 		Long userId = user.getId();
-		Cart cart = cartService.findByUserID((long)userId);
-		//if cart null create new car
-		if(cart==null) {
-			cart = new Cart();
-		}
-		
+		//Find user cart by user id
+		Cart cart = cartService.findByUserID(userId);
+		System.out.println(cart);
+		//Product
+		ProductDetails product = productService.findById((long) 1);
 		//Add product to cart
-        cart.addProduct(productRepo.findById(1).get());
-        System.out.println(cart.getProductsList().size());
-        //cart.getProductsMap();
+        cart.addProduct(product);
+        System.out.println(cart.getProductCounter());
+        System.out.println(cart.getPreTaxPrice());
+        System.out.println(cart.getTotalPrice());
 		model.addAttribute("cart",cart);
-		
-		// Save updated cart 
- 		//int quantity=cart.getProductsMap().get(productRepo.findById(1).get())  ;
-		//model.addAttribute("quantity",quantity);
-		//cartRepo.deleteById(cart.getId());
-		cartRepo.save(cart);
+		model.addAttribute("product",product);
+		cartService.save(cart);
+		System.out.println("checking +");
 		return "cart4";
 	}
 	
 	@GetMapping("/checkout")
 	public String showCheckout(Model model) {
-		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		String userName = auth.getName();
-		User user = userService.findUserByEmail(userName);
+		User user = gettingAuthentication();
 		model.addAttribute("user",user);
-		return "checkout";
+		return "check_out";
 	}
+	
+	@GetMapping("/orderSuccess")
+	public String showOrderSuccess(Model model) {
+		return "order_success";
+	}
+	
 	
 	
 	

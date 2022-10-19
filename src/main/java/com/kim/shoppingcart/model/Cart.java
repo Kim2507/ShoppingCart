@@ -10,79 +10,72 @@ import java.util.Set;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+
 @Entity
 @Table
-
 @AllArgsConstructor
 public class Cart implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer id;
+	private Long id;
 	
 	private final double TAX_RATE = 0.05;
+	@Transient
+	private final double PRODUCT_PRICE= 5.5;
 
 	private double preTaxPrice;
 	private double totalPrice;
+	private int productCounter;
 	
 	@OneToOne(cascade=CascadeType.ALL)
-	private User userID;
+	private User user;
 	
-	@OneToMany(targetEntity=ProductDetails.class, cascade=CascadeType.ALL,mappedBy="cart")
+	
+	
+	@OneToMany(mappedBy="cart",cascade=CascadeType.ALL,fetch=FetchType.LAZY,targetEntity=ProductDetails.class)
 	private List<ProductDetails> productsList;
-
+	
 	@Transient
 	private static Map<ProductDetails,Integer> productsMap;
 	
 	public Cart() {
+		productCounter=0;
 		productsMap = new HashMap<>();                                                                
 	}
 	
-	public Cart(Integer id) {
+	public Cart(Long id) {
 		super();
 		this.id = id;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
 	
 	public void addProduct(ProductDetails product) {
-		// Add to List
-		productsList.add(product);
-		//Add to HashMap
-		if (productsMap.containsKey(product)) {
-			productsMap.replace(product, productsMap.get(product) + 1);
-        } else {
-        	productsMap.put(product, 1);
-        } 
+		getProductsList().add(product);
+		productCounter++;
+		product.setCart(this);
 	}
 
     public void removeProduct(ProductDetails product) {
-    	//Remove from list
-    	productsList.remove(product); 
-    	//Remove from hashmap 
-    	 if (productsMap.containsKey(product)) {
-             if (productsMap.get(product) > 1)
-            	 productsMap.replace(product, productsMap.get(product) - 1);
-             else if (productsMap.get(product) == 1) {
-            	 productsMap.remove(product);
-             }
-         }
+    	getProductsList().remove(product);
+		product.setCart(this);
     }
+	
 	
 	public Map<ProductDetails,Integer> getProductsMap(){
 		return productsMap;
 	}
 	
 	public double getPreTaxPrice() {
-		getProductsMap().forEach((key,value)->{
-			preTaxPrice += key.getPrice()*value;
-		});
+		// So far all products have same price 
+		preTaxPrice = getProductCounter()*5.5;
 		return preTaxPrice;
 	}
 	
@@ -98,11 +91,11 @@ public class Cart implements Serializable{
 	}
 
 	public User getUserID() {
-		return userID;
+		return user;
 	}
 
-	public void setUserID(User userID) {
-		this.userID = userID;
+	public void setUserID(User user) {
+		this.user = user;
 	}
 
 	
@@ -123,14 +116,48 @@ public class Cart implements Serializable{
 		this.productsMap = productsMap;
 	}
 
+//	public ProductDetails getProduct() {
+//		return product;
+//	}
+//
+//	public void setProduct(ProductDetails product) {
+//		this.product = product;
+//	}
+
 	public List<ProductDetails> getProductsList() {
-		return productsList;
+		if(this.productsList==null) {
+			this.productsList = new ArrayList<>();
+		}
+		return this.productsList;
 	}
 
 	public void setProductsList(List<ProductDetails> productsList) {
 		this.productsList = productsList;
 	}
 	
+	
+	
+	@Override
+	public boolean equals(Object obj){
+		if(obj instanceof Cart) {
+			Cart other = (Cart)obj;
+			boolean sameId = (this.id==other.getId());
+			boolean sameUserID = (this.user.equals(other.getUserID()));
+			if(sameId && sameUserID) {
+				return true;
+			}
+		}
+		return false;
+		
+	}
+
+	public int getProductCounter() {
+		return productCounter;
+	}
+
+	public void setProductCounter(int productCounter) {
+		this.productCounter = productCounter;
+	}
 	
 	
 

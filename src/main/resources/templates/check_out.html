@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
-<link rel="stylesheet" th:href="@{/css/cart.css}" />
+<link rel="stylesheet" th:href="@{/css/check_out.css}" />
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -16,17 +16,19 @@
 </head>
 <body>
 
-<section>
+<section class="shipping">
+	<h3>Shipping Address</h3>
 	<div th:text="${user.getName}"></div>
 	<div th:text="${user.getAddress}"></div>
 	<div th:text="${user.getCity}"></div>
 	<div th:text="${user.getState}"></div>
 	<div th:text="${user.getZipCode}"></div>
-</section>
-	<form>
+</section >
+
+	<form class="payment" method="get" th:action="@{/orderSuccess}">
 		<div class="col">
 			<h4>
-				<b>Payment</b>
+				<h3>Payment</h3>
 			</h4>
 		</div>
 		<div class="input-group mb-3">
@@ -44,5 +46,6 @@
 		</div>
 		<button type="submit" class="btn-primary">Check Out</button>
 	</form>
+
 </body>
 </html>

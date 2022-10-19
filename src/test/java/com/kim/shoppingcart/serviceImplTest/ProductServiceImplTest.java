@@ -1,6 +1,6 @@
 package com.kim.shoppingcart.serviceImplTest;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Optional;
 
@@ -20,30 +20,24 @@ public class ProductServiceImplTest {
 	@Autowired
 	ProductRepository productRepo;
 	
+	@Autowired
+	ProductServiceImpl productService;
+	
+
+	
 	@Test
-	public void testUpdateProduct() {
-		ProductDetails p = productRepo.getReferenceById(2);
-		p.setPrice(6.5);
-		p.setStockQuantity(9);
-		productRepo.save(p);
+	public void testFindById() {
+		ProductDetails expected = new ProductDetails();
+		ProductDetails actual = productService.findById((long) 1);
+		expected.setName("Black Tea");
+		assertEquals(expected.getName(),actual.getName());
 		
 	}
 	
-//	@Test
-//	public void testGetProducts() {
-//		//Optional<ProductDetails> btO = productService.findById(1);
-//		ProductDetails bt = productRepo.findById(1).get();
-//		//Optional<ProductDetails> gtO = productService.findById(2);
-//		ProductDetails gt = productRepo.findById(2).get();
-//		ProductDetails btE = new ProductDetails();
-//		btE.setName("black tea");
-//		ProductDetails gtE = new ProductDetails();
-//		gtE.setName("green tea");
-//		assertEquals(btE.getName(),bt.getName());
-//		assertEquals(gtE.getName(),gt.getName());
-//		
-//		
-//	}
-	
+	@Test // from service
+	public void testFindByName() {
+		ProductDetails p = productService.findByName("Black Tea");
+		assertEquals("Black Tea", p.getName());
+	}
 
 }

@@ -2,10 +2,7 @@ package com.kim.shoppingcart.service.impl;
 
 import java.math.BigDecimal;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +16,7 @@ import com.kim.shoppingcart.model.Cart;
 import com.kim.shoppingcart.model.ProductDetails;
 import com.kim.shoppingcart.repository.CartRepository;
 import com.kim.shoppingcart.repository.ProductRepository;
+import com.kim.shoppingcart.repository.UserRepository;
 import com.kim.shoppingcart.service.CartService;
 
 import jakarta.persistence.EntityManager;
@@ -27,13 +25,14 @@ import jakarta.persistence.Query;
 
 
 @Service
-//@ScopeproxyMode = ScopedProxyMode.TARGET_CLASS)
-@Transactional
+//@Scope(value = WebApplicationContext.SCOPE_SESSION, proxyMode = ScopedProxyMode.TARGET_CLASS)
+//@Transactional
 public class CartServiceImpl implements CartService {
 
 	@Autowired
 	CartRepository cartRepo;
-	
+	@Autowired
+	UserRepository userRepo;
 	@Autowired
 	EntityManager entityManager;
 
@@ -43,20 +42,26 @@ public class CartServiceImpl implements CartService {
 	}
 
 	@Override
-	public Optional<Cart> findById(Integer id) {
-		return cartRepo.findById(id);
+	public Cart findById(Long id) {
+		return cartRepo.findById(id).get();
 	}
 
 	@Override
 	public Cart findByUserID(Long userId) {
-		Query query = entityManager.createNativeQuery("SELECT * FROM shoppingcart1.cart " +
-                "WHERE userid_id = ?", Cart.class);
-        
-		query = query.setParameter(1, userId);
-		query.setParameter(1, userId);
-
-        return (Cart)query.getSingleResult();
+		Cart carts = cartRepo.findByUserId(userId);
+		if(carts==null) {
+			Cart cart2 = new Cart();
+			cart2.setUserID(userRepo.findById(userId).get());
+			return cartRepo.save(cart2);
+		}
 		
+        return carts;
+		
+	}
+
+	@Override
+	public void save(Cart cart) {
+		cartRepo.save(cart);
 		
 	}
 	

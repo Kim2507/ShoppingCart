@@ -33,11 +33,6 @@ public class User implements Serializable{
 //	@JoinColumn(name="cart_id")
 //	@Transient
 //	private Cart cart;
-
-	
-	
-	@OneToMany(targetEntity = OrderDetails.class)
-	private Set<OrderDetails> orders;
 	
 	
 	

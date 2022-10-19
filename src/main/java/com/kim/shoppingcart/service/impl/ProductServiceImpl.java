@@ -13,12 +13,31 @@ import com.kim.shoppingcart.service.ProductService;
 
 @Service
 public class ProductServiceImpl implements ProductService {
+	
+	@Autowired
 	private final ProductRepository productRepo;
 
-    @Autowired
+   
     public ProductServiceImpl(ProductRepository productRepo) {
         this.productRepo = productRepo;
     }
+
+
+	@Override
+	public ProductDetails findByName(String name) {
+		return productRepo.findByName(name);
+	}
+
+
+	@Override
+	public ProductDetails findById(Long id) {
+		return productRepo.findById(id).get();
+	}
+
+
+	
+    
+   
     
 	
 

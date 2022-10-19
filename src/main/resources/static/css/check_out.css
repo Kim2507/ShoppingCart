@@ -1,20 +1,26 @@
 @charset "ISO-8859-1";
 
-
 body{
 	font-family: "Ms Madi", cursive;
    	background-image: linear-gradient( 135deg, #F0FF00 10%, #58CFFB 100%);
 }
 
-.form-control{
-	display: flex;
-	display: inline-block;
-	width: 50%;
+.shipping{
+	text-align: center;
+	font-size:20px;
 }
 
-#p{
+.payment{
 	display:inline-block;
+	margin-top: 20px;
+	margin-left: 40%;
+	
+	
+	
 }
-.item-display{
-	display:inline-block;
+
+.order{
+	text-align: center;
+	font-size:45px;
+	margin: auto;
 }

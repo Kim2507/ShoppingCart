@@ -23,14 +23,19 @@ import lombok.NoArgsConstructor;
 public class ProductDetails implements Serializable {
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY )
-	private Integer productId;
+	private Long productId;
 	private String name;
 	private String description;
 	private double price;
 	private int stockQuantity;
 
 	@ManyToOne
+	@JoinColumn(name="cart_id")
 	private Cart cart;
+	
+	@ManyToOne
+	@JoinColumn(name="category_id")
+	private Categories category;
 	
 	public ProductDetails(String name, String description, double price, int quantity) {
 		super();

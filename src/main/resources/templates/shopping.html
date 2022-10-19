@@ -18,7 +18,7 @@
       <h1>PRODUCT PAGE</h1>
       <nav>
         <ul>
-          <li class="active"><a th:href="@{/home}">Home</a></li>
+          <li class="active"><a th:href="@{/}">Home</a></li>
           <li class="active"><a th:href="@{/shopping}">Shop</a>
             <!-- <div class="sub-menu-1">
                 <a class ="li" href="#">Tea Leaves</a>
@@ -36,19 +36,25 @@
 
       <div class ="row">
         <div class="column" >
+        <form method="post" role="form" th:action="@{/addedBT}">
           <div class="title">BLACK TEA</div>
-          <form method="post" role="form" th:action="@{/addedBT}">
+          <img class = "img" th:src="@{/images/black_tea.png}" alt="black-tea">
           <button class="btn btn-primary" type="submit">Save to cart</button>
+          </form>
         </div>
         <div class="column" >
+         <form method="post" role="form" th:action="@{/addedGT}">
           <div class="title">GREEN TEA</div>
-          <form method="post" role="form" th:action="@{/addedGT}">
-          <button class="btn btn-primary" type="submit">Save to cart</button>
+         <img class = "img" th:src="@{/images/green_tea.png}" alt="green-tea">
+          <button class="btn btn-primary" type="submit" onclick="alert('OUT OF STOCK')";>Save to cart</button>
+          </form>
         </div>
         <div class="column" >
+         <form method="post" role="form" th:action="@{/addedCM}">
           <div class="title">CHAM</div>
-          <form method="post" role="form" th:action="@{/addedCM}">
-          <button class="btn btn-primary" type="submit">Save to cart</button>
+         <img class = "img" th:src="@{/images/chamomile.png}" alt="chamomile">
+          <button class="btn btn-primary" type="submit" onclick="alert('OUT OF STOCK')";>Save to cart</button>
+          </form>
         </div>
       </div>
     </div>

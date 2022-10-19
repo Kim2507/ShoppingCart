@@ -36,26 +36,31 @@ public class CartServiceImplTest {
 	UserRepository userRepo;
 	
 //	//succeed
-	@Test 
-	public void testAddProductToCart() {
-		Cart cart = new Cart();
+	@Test // save black tea product to cart then save cart to database
+	public void testSaveCart() {
+		ProductDetails p = productService.findById((long) 1);
+		Cart cart = cartService.findByUserID((long) 1);
 		List<ProductDetails> productList = new ArrayList<>();
-		ProductDetails p = productRepo.getReferenceById(1);
 		productList.add(p);
 		productList.add(p);
 		productList.add(p);
 		cart.setProductsList(productList);
-		cart.setUserID(userRepo.getReferenceById((long) 2));
-//		System.out.println(cart.getProductMap().toString().toString());
-//		System.out.println(cart.getPreTax());
-//		System.out.println(cart.getTotal());
-		cartRepo.save(cart);
+		cartService.save(cart);
+		assertNotNull(cartService.findByUserID((long) 1));
 	}
 	
-	@Test 
-	public void getCartByUserId() {
-		//Cart cart = cartService.findByUserID((long) 1);
-		assertNotNull(cartService.findByUserID((long) 2));
+	@Test
+	public void testFindById() {
+		Cart actual = cartService.findById((long) 1);
+		Cart expected = new Cart();
+		expected.setId((long) 1);
+		assertEquals(expected.getId(),actual.getId());
+		
+	}
+	
+	@Test // getting cart with id 1
+	public void getFindByUserId() {
+		assertNotNull(cartService.findByUserID((long) 1));
 	}
 	
 	
