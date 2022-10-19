@@ -33,6 +33,10 @@ public class ProductDetails implements Serializable {
 	@JoinColumn(name="cart_id")
 	private Cart cart;
 	
+	@ManyToOne
+	@JoinColumn(name="category_id")
+	private Categories category;
+	
 	public ProductDetails(String name, String description, double price, int quantity) {
 		super();
 		this.name = name;

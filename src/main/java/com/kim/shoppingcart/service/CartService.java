@@ -9,9 +9,13 @@ import com.kim.shoppingcart.model.Cart;
 
 
 public interface CartService {
-	Optional<Cart> findById(Long id);
+	Cart findById(Long id);
 	
     Cart findByUserID(Long id);
+
+	void save(Cart cart);
+	
+	
     
 
 }

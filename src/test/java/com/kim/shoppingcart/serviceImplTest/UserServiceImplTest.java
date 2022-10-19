@@ -25,8 +25,6 @@ public class UserServiceImplTest {
 	UserServiceImpl userService;
 	@Autowired
 	UserRepository userRepo;
-	@Autowired
-	RoleRepository roleRepo;
 	
 
 	

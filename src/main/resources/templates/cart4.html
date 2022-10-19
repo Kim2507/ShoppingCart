@@ -16,9 +16,33 @@
 </head>
 <body>
 <form class="payment" method="get" th:action="@{/checkout}">
-<div th:text="${cart.getProductCounter}"></div>
-<div th:text="${product.getName}"></div>
 
+<div>
+	<div th:text="${product.getName}"></div>
+	<button th:onclick="increment()">+</button>
+	<div id="counting" th:value="${cart.getProductCounter}">Quantity</div>
+	<button th:onclick="decrement()">-</button>
+	<div th:text="${cart.getPreTaxPrice}"></div>
+	<div th:text="${cart.getTotalPrice}"></div>
+
+</div>
+<script th:inline="javascript">
+
+	var quantity = /*[[${cart.getProductCounter}]]*/ 'Quantity';
+	 //var quantity = 1;
+	document.getElementById("counting").innerText = quantity;
+	
+	function increment(){
+		quantity = quantity + 1;
+		document.getElementById("counting").innerText = quantity;
+	}
+	
+	function decrement(){
+		quantity = quantity - 1;
+		document.getElementById("counting").innerText = quantity;
+	}
+	
+</script>
 
 	<!-- <div class="container" th:each="mapEntry: ${cart.getProduct.toString}">
 		<div class="item-display" th:text="${mapEntry.key.getName}"></div>

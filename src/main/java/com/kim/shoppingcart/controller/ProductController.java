@@ -19,39 +19,39 @@
 //public class ProductController {
 //	
 //	@Autowired
-//	ProductRepository productRepo;
+//	ProductRepository productService;
 //	
 //	// Create 
 //	@PostMapping("/products")
 //	public ProductDetails addNewProduct(@RequestBody ProductDetails product) {
-//		return productRepo.save(product);
+//		return productService.save(product);
 //	}
 //	
 //	//Read 
 //	@GetMapping("/products")
 //	public List<ProductDetails> getAllProducts(){
-//		return productRepo.findAll();
+//		return productService.findAll();
 //	}
 //	
 //	//Update 
 //	@PutMapping("/products/{id}")
-//	ProductDetails updateProduct(@RequestBody ProductDetails newProduct,@PathVariable Integer id) {
-//		return productRepo.findById(id).map(product->{
+//	ProductDetails updateProduct(@RequestBody ProductDetails newProduct,@PathVariable Long id) {
+//		return productService.findById(id).map(product->{
 //			product.setName(newProduct.getName());
 //			product.setDescription(newProduct.getDescription());
 //			product.setPrice(newProduct.getPrice());
 //			product.setStockQuantity(newProduct.getStockQuantity());
 //			
-//			return productRepo.save(product);
+//			return productService.save(product);
 //		}).orElseGet(()->{
 //			newProduct.setProductId(id);
-//			return productRepo.save(newProduct);
+//			return productService.save(newProduct);
 //		});
 //	}
 //	
 //	//Delete
 //	@DeleteMapping("/products/{id}")
-//	void deleteProduct(@PathVariable Integer id) {
-//		productRepo.deleteById(id);
+//	void deleteProduct(@PathVariable Long id) {
+//		productService.deleteById(id);
 //	}
 //}

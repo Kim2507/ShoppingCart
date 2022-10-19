@@ -42,20 +42,12 @@ public class CartServiceImpl implements CartService {
 	}
 
 	@Override
-	public Optional<Cart> findById(Long id) {
-		return cartRepo.findById(id);
+	public Cart findById(Long id) {
+		return cartRepo.findById(id).get();
 	}
 
 	@Override
 	public Cart findByUserID(Long userId) {
-//		Query query = entityManager.createNativeQuery("SELECT * FROM shoppingcart.cart as c " +
-//               "WHERE c.user_id = ?1", Cart.class);
-//        //Query query = entityManager.createNamedQuery("select c from Cart c where c.userID LIKE :userid_id");
-//		//query = query.setParameter(1, userId);
-//		query.setParameter(1, userId);
-//        //query.setParameter("userid_id", userId);
-//		List<Cart> cart  = query.getResultList();//getSingleResult();
-		//if(query.getSingleResult()==null) {
 		Cart carts = cartRepo.findByUserId(userId);
 		if(carts==null) {
 			Cart cart2 = new Cart();
@@ -63,9 +55,13 @@ public class CartServiceImpl implements CartService {
 			return cartRepo.save(cart2);
 		}
 		
-
         return carts;
 		
+	}
+
+	@Override
+	public void save(Cart cart) {
+		cartRepo.save(cart);
 		
 	}
 	

@@ -104,32 +104,51 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public List<User> findUserByCity(String city) {
-		Query query = entityManager.createNativeQuery("SELECT * FROM shoppingcart1.users " +
-                "WHERE city LIKE ?", User.class);
-		query.setParameter(1, city+"%");
-        return query.getResultList();
+//		Query query = entityManager.createNativeQuery("SELECT * FROM shoppingcart1.users " +
+//                "WHERE city LIKE ?", User.class);
+//		query.setParameter(1, city+"%");
+//        return query.getResultList();
+        return userRepo.findUserByCity(city);
 	}
 
 	@Override
 	public List<User> findUserByState(String state) {
-		Query query = entityManager.createNativeQuery("SELECT * FROM shoppingcart.users " +
-                "WHERE state LIKE ?", User.class);
-		query.setParameter(1, state+"%");
-        return query.getResultList();
+//		Query query = entityManager.createNativeQuery("SELECT * FROM shoppingcart.users " +
+//                "WHERE state LIKE ?", User.class);
+//		query.setParameter(1, state+"%");
+//        return query.getResultList();
+		return userRepo.findUserByState(state);
 	}
 
 	@Override
 	public List<User> findUserByName(String name) {
-		Query query = entityManager.createNativeQuery("SELECT * FROM shoppingcart.users " +
-                "WHERE name LIKE ?", User.class);
-		query.setParameter(1, name+"%");
-        return query.getResultList();
+//		Query query = entityManager.createNativeQuery("SELECT * FROM shoppingcart.users " +
+//                "WHERE name LIKE ?", User.class);
+//		query.setParameter(1, name+"%");
+//        return query.getResultList();
+		return userRepo.findUserByName(name);
 	}
 
 	@Override
 	public void deleteUser(Long id) {
 		userRepo.deleteById(id);
 		
+	}
+
+	@Override
+	public void updateUser(User user) {
+		User newUser = this.findById(user.getId());
+		newUser.setEmail(user.getEmail());
+		newUser.setAddress(user.getAddress());
+		newUser.setCity(user.getCity());
+		newUser.setState(user.getState());
+		newUser.setZipCode(user.getZipCode());
+		userRepo.save(newUser);
+	}
+
+	@Override
+	public User findById(Long id) {
+		return userRepo.findById(id).get();
 	}
 	 
 	

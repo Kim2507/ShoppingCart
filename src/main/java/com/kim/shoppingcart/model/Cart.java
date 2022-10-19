@@ -20,19 +20,17 @@ public class Cart implements Serializable{
 	private Long id;
 	
 	private final double TAX_RATE = 0.05;
+	@Transient
+	private final double PRODUCT_PRICE= 5.5;
 
 	private double preTaxPrice;
 	private double totalPrice;
-	private static int productCounter;
+	private int productCounter;
 	
 	@OneToOne(cascade=CascadeType.ALL)
 	private User user;
 	
-//	@OneToOne(cascade=CascadeType.ALL)
-//	private ProductDetails product;
 	
-//	@OneToMany(targetEntity=ProductDetails.class)
-//	private List<ProductDetails> productsList;
 	
 	@OneToMany(mappedBy="cart",cascade=CascadeType.ALL,fetch=FetchType.LAZY,targetEntity=ProductDetails.class)
 	private List<ProductDetails> productsList;
@@ -76,10 +74,8 @@ public class Cart implements Serializable{
 	}
 	
 	public double getPreTaxPrice() {
-		getProductsMap().forEach((key,value)->{
-			preTaxPrice += key.getPrice()*value;
-		});
-		//preTaxPrice = product.getPrice();
+		// So far all products have same price 
+		preTaxPrice = getProductCounter()*5.5;
 		return preTaxPrice;
 	}
 	
@@ -155,13 +151,14 @@ public class Cart implements Serializable{
 		
 	}
 
-	public static int getProductCounter() {
+	public int getProductCounter() {
 		return productCounter;
 	}
 
-	public static void setProductCounter(int productCounter) {
-		Cart.productCounter = productCounter;
+	public void setProductCounter(int productCounter) {
+		this.productCounter = productCounter;
 	}
+	
 	
 
 }

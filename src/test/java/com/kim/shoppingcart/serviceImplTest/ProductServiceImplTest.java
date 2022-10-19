@@ -1,6 +1,6 @@
 package com.kim.shoppingcart.serviceImplTest;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Optional;
 
@@ -20,19 +20,24 @@ public class ProductServiceImplTest {
 	@Autowired
 	ProductRepository productRepo;
 	
+	@Autowired
+	ProductServiceImpl productService;
+	
 
 	
 	@Test
-	public void testGetProducts() {
-		//Optional<ProductDetails> btO = productService.findById(1);
-		ProductDetails bt = productRepo.findById((long) 1).get();
-		//Optional<ProductDetails> gtO = productService.findById(2);
-		
-		ProductDetails btE = new ProductDetails();
-		btE.setName("Black Tea");
-		assertEquals(btE.getName(),bt.getName());
+	public void testFindById() {
+		ProductDetails expected = new ProductDetails();
+		ProductDetails actual = productService.findById((long) 1);
+		expected.setName("Black Tea");
+		assertEquals(expected.getName(),actual.getName());
 		
 	}
 	
+	@Test // from service
+	public void testFindByName() {
+		ProductDetails p = productService.findByName("Black Tea");
+		assertEquals("Black Tea", p.getName());
+	}
 
 }

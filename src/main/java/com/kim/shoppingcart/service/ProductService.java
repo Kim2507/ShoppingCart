@@ -8,6 +8,8 @@ import org.springframework.data.domain.Pageable;
 import com.kim.shoppingcart.model.ProductDetails;
 
 public interface ProductService {
+	ProductDetails findById(Long id);
+	ProductDetails findByName(String name);
 	
 
    

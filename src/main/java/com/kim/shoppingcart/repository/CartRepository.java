@@ -14,8 +14,7 @@ import com.kim.shoppingcart.service.CartService;
 //@Transactional
 public interface CartRepository extends JpaRepository<Cart, Long>{
 
-	//@Query("SELECT * FROM shoppingcart.cart as c WHERE c.user_id = ?1")
-	//List<Cart> findByUserId(Long userId);
+	
 	Cart findByUserId(Long userId);
-	//CRUD 
+	 
 }
