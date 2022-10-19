@@ -4121,4 +4121,94 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 ""2022-10-19 15:25:35 [restartedMain] INFO  o.s.s.a.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
 ""2022-10-19 15:25:35 [restartedMain] INFO  c.k.s.ShoppingCartKApplication - Started ShoppingCartKApplication in 1.016 seconds (process running for 2567.464)
 ""2022-10-19 15:25:35 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+""2022-10-19 15:28:48 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+""2022-10-19 15:28:48 [Thread-11] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+""2022-10-19 15:28:48 [Thread-11] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-3 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.3/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.3/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.3/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.3/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.3/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.3/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.3/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.3/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.3/java.lang.Thread.run(Thread.java:833)
+""2022-10-19 15:28:48 [Thread-11] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-10-19 15:28:48 [Thread-11] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown initiated...
+""2022-10-19 15:28:48 [Thread-11] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown completed.
+""2022-10-19 15:28:48 [restartedMain] INFO  c.k.s.ShoppingCartKApplication - Starting ShoppingCartKApplication using Java 17.0.3 on Kim_PerScholas with PID 13156 (C:\Users\mykim\Documents\spring-boot-workspace\shoppingCartK\target\classes started by mykim in C:\Users\mykim\Documents\spring-boot-workspace\shoppingCartK)
+""2022-10-19 15:28:48 [restartedMain] DEBUG c.k.s.ShoppingCartKApplication - Running with Spring Boot v3.0.0-M5, Spring v6.0.0-M6
+""2022-10-19 15:28:48 [restartedMain] INFO  c.k.s.ShoppingCartKApplication - No active profile set, falling back to 1 default profile: "default"
+""2022-10-19 15:28:48 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-10-19 15:28:48 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18 ms. Found 5 JPA repository interfaces.
+""2022-10-19 15:28:48 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+""2022-10-19 15:28:48 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2022-10-19 15:28:48 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.0.23]
+""2022-10-19 15:28:48 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2022-10-19 15:28:48 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 302 ms
+""2022-10-19 15:28:48 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-10-19 15:28:48 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+""2022-10-19 15:28:48 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Starting...
+""2022-10-19 15:28:48 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-4 - Added connection org.mariadb.jdbc.Connection@3a0a2386
+""2022-10-19 15:28:48 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Start completed.
+""2022-10-19 15:28:48 [restartedMain] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+""2022-10-19 15:28:48 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-10-19 15:28:48 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-10-19 15:28:48 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1050-42S01: Table 'spring_session' already exists
+""2022-10-19 15:28:48 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1061-42000: Duplicate key name 'SPRING_SESSION_IX1'
+""2022-10-19 15:28:48 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1061-42000: Duplicate key name 'SPRING_SESSION_IX2'
+""2022-10-19 15:28:48 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1061-42000: Duplicate key name 'SPRING_SESSION_IX3'
+""2022-10-19 15:28:48 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1050-42S01: Table 'spring_session_attributes' already exists
+""2022-10-19 15:28:48 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@14371793, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@377993, org.springframework.security.web.context.SecurityContextHolderFilter@2dbf02e, org.springframework.security.web.header.HeaderWriterFilter@3afd5a39, org.springframework.security.web.authentication.logout.LogoutFilter@53f4f73a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6b3a9f60, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5871aa6b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@80d0fce, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@33ba8024, org.springframework.security.web.session.SessionManagementFilter@776e22cf, org.springframework.security.web.access.ExceptionTranslationFilter@56218a34, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3c01f7f6]
+""2022-10-19 15:28:48 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-10-19 15:28:49 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+""2022-10-19 15:28:49 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+""2022-10-19 15:28:49 [restartedMain] INFO  o.s.s.a.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+""2022-10-19 15:28:49 [restartedMain] INFO  c.k.s.ShoppingCartKApplication - Started ShoppingCartKApplication in 0.917 seconds (process running for 2760.987)
+""2022-10-19 15:28:49 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+""2022-10-19 15:29:31 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+""2022-10-19 15:29:31 [Thread-15] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+""2022-10-19 15:29:31 [Thread-15] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-4 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.3/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.3/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.3/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.3/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.3/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.3/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.3/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.3/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.3/java.lang.Thread.run(Thread.java:833)
+""2022-10-19 15:29:31 [Thread-15] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-10-19 15:29:31 [Thread-15] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown initiated...
+""2022-10-19 15:29:31 [Thread-15] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown completed.
+""2022-10-19 15:29:31 [restartedMain] INFO  c.k.s.ShoppingCartKApplication - Starting ShoppingCartKApplication using Java 17.0.3 on Kim_PerScholas with PID 13156 (C:\Users\mykim\Documents\spring-boot-workspace\shoppingCartK\target\classes started by mykim in C:\Users\mykim\Documents\spring-boot-workspace\shoppingCartK)
+""2022-10-19 15:29:31 [restartedMain] DEBUG c.k.s.ShoppingCartKApplication - Running with Spring Boot v3.0.0-M5, Spring v6.0.0-M6
+""2022-10-19 15:29:31 [restartedMain] INFO  c.k.s.ShoppingCartKApplication - No active profile set, falling back to 1 default profile: "default"
+""2022-10-19 15:29:31 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-10-19 15:29:31 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 5 JPA repository interfaces.
+""2022-10-19 15:29:31 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+""2022-10-19 15:29:31 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2022-10-19 15:29:31 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.0.23]
+""2022-10-19 15:29:32 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2022-10-19 15:29:32 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 266 ms
+""2022-10-19 15:29:32 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-10-19 15:29:32 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+""2022-10-19 15:29:32 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Starting...
+""2022-10-19 15:29:32 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-5 - Added connection org.mariadb.jdbc.Connection@4224d1a8
+""2022-10-19 15:29:32 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Start completed.
+""2022-10-19 15:29:32 [restartedMain] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+""2022-10-19 15:29:32 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-10-19 15:29:32 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-10-19 15:29:32 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1050-42S01: Table 'spring_session' already exists
+""2022-10-19 15:29:32 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1061-42000: Duplicate key name 'SPRING_SESSION_IX1'
+""2022-10-19 15:29:32 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1061-42000: Duplicate key name 'SPRING_SESSION_IX2'
+""2022-10-19 15:29:32 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1061-42000: Duplicate key name 'SPRING_SESSION_IX3'
+""2022-10-19 15:29:32 [restartedMain] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1050-42S01: Table 'spring_session_attributes' already exists
+""2022-10-19 15:29:32 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@73399c6a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@65e8a2f5, org.springframework.security.web.context.SecurityContextHolderFilter@672763dd, org.springframework.security.web.header.HeaderWriterFilter@4ce68561, org.springframework.security.web.authentication.logout.LogoutFilter@72dfd058, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1a51a8f3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4a2633f3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@32937a5b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@bcee777, org.springframework.security.web.session.SessionManagementFilter@2ac6ce6e, org.springframework.security.web.access.ExceptionTranslationFilter@6029a0ba, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@41c5e1ae]
+""2022-10-19 15:29:32 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-10-19 15:29:32 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+""2022-10-19 15:29:32 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+""2022-10-19 15:29:32 [restartedMain] INFO  o.s.s.a.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+""2022-10-19 15:29:32 [restartedMain] INFO  c.k.s.ShoppingCartKApplication - Started ShoppingCartKApplication in 0.812 seconds (process running for 2804.483)
+""2022-10-19 15:29:32 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
 "
