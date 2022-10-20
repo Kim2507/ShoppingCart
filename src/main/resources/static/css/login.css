@@ -1,0 +1,71 @@
+@charset "ISO-8859-1";
+
+body{
+    font-family: "Ms Madi", cursive;
+    background-image: url(https://th.bing.com/th/id/OIP.gOkp87GLQkLae0QY2u-HogHaE7?pid=ImgDet&rs=1);
+   
+}
+
+
+.container{
+	font-family: "Ms Madi", cursive;
+}
+
+#form {
+    width: 350px;
+    height: 400px;
+    margin: 20vh auto 0 auto;
+    padding: 20px;
+    background: whitesmoke;
+    color: black;
+    border-radius: 10px;
+    font-size: 12px;
+    align-content: space-around;
+  } 
+
+
+  #form h1 {
+
+    color: black;
+    text-align: center;
+    
+  }
+  
+#form button{
+    /* background-color: #DBEDB2;
+    height: 20px;
+    width: 80px;
+    border-radius: 2px;
+    margin-top: 10px; */
+
+    padding: 10px;
+    margin-top: 10px;
+    width: 200px;
+    color: white;
+    background: linear-gradient(to top left, #afcfb7, #69916a, #2c642d);
+    border: none;
+    border-radius: 4px;
+}
+
+
+.input-control input {
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    font-size: 12px;
+    margin-top: 10px;
+    padding: 10px;
+    width: 95%;
+    font-weight:bold;
+  }
+  
+.input-control {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.container{
+    display:block;
+}
+
