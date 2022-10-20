@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="ISO-8859-1">
+<title>Product List</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" th:href="@{/css/cart.css}" >
+</head>
+<body>
+<div class="container">
+  <h2>Product List</h2>
+ 
+  	<a th:href="@{/new_product}">Add Product</a>
+          
+  <table class="table table-bordered" method="get" th:action="@{/products}">
+    <thead>
+      <tr>
+      	<th>Product Id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Stock Quantity</th>
+      </tr>
+    </thead>
+			<tbody>
+				<tr th:if="${products.isEmpty}">
+					<td colspan="2">No Products Available</td>
+
+				</tr>
+
+				<tr th:each="product :${products}">
+					<td th:text="${product.getProductId}"></td>
+					<td th:text="${product.getName}"></td>
+					<td th:text="${product.getDescription}"></td>
+					<td th:text="${product.getPrice}"></td>
+					<td th:text="${product.getStockQuantity}"></td>
+					<td>
+						<button type="button" class="btn btn-info">Update</button>
+						<a class="btn btn-danger" th:href="@{/products/{id}(id=${product.getProductId})}">Delete</a>
+							
+					</td>
+				</tr>
+
+			</tbody>
+		</table>
+</div>
+
+</body>
+</html>
+
+
+

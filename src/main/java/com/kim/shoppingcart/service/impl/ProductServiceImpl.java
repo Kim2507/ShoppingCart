@@ -35,6 +35,12 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 
+	public void deleteById(Long id) {
+		productRepo.deleteById(id);
+		
+	}
+
+
 	
     
    
