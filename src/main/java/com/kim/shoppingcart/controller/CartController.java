@@ -45,6 +45,8 @@ public class CartController {
 		return "shopping";
 	}
 	
+	
+	//Getting authentication current user's info
 	public User gettingAuthentication() {
 		// get the ID of the authenticated user
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -54,6 +56,7 @@ public class CartController {
 		return user;
 	}
 	
+	// Adding Black Tea product into cart 
 	@PostMapping("/addedBT")
 	public String addBTToCart(Model model) {
 		User user = gettingAuthentication();
@@ -76,6 +79,7 @@ public class CartController {
 		return "cart4";
 	}
 	
+	// Show 
 	@GetMapping("/checkout")
 	public String showCheckout(Model model) {
 		User user = gettingAuthentication();

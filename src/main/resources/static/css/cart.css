@@ -12,9 +12,15 @@ body{
 	width: 50%;
 }
 
-#p{
+#p #h4{
 	display:inline-block;
 }
 .item-display{
 	display:inline-block;
 }
+
+.group-items{
+	display: flex;
+	align-items: space-around;
+}
+

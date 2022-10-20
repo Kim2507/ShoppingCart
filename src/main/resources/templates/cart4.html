@@ -18,12 +18,20 @@
 <form class="payment" method="get" th:action="@{/checkout}">
 
 <div>
-	<div th:text="${product.getName}"></div>
+	<h4 th:text="${product.getName}"></h4>
+	<div class="group-items">
 	<button th:onclick="increment()">+</button>
-	<div id="counting" th:value="${cart.getProductCounter}">Quantity</div>
+	<p id="counting" th:value="${cart.getProductCounter}">Quantity</p>
 	<button th:onclick="decrement()">-</button>
-	<div th:text="${cart.getPreTaxPrice}"></div>
-	<div th:text="${cart.getTotalPrice}"></div>
+	</div>
+	<div class="group-items">
+		<h4>Pre Tax: $</h4>
+		<p th:text="${cart.getPreTaxPrice}"></p>
+	</div>
+	<div class="group-items">
+		<h4>Total: $</h4>
+		<p th:text="${cart.getTotalPrice}"></p>
+	</div>
 
 </div>
 <script th:inline="javascript">

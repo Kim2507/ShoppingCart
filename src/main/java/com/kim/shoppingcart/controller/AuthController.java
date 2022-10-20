@@ -37,13 +37,14 @@ public class AuthController {
         return "login";
     }
     
+    //After login successfully
     @PostMapping("/login")
     public String loginSuccess(){
         return "shopping";
     }
     
     
-	
+	// Show the register page
 	@GetMapping("/register")
 	public String showRegistrationForm(Model model) {
 		UserDto user = new UserDto();
@@ -51,6 +52,7 @@ public class AuthController {
 		return "register";
 	}
 	
+	//After register successfully
 	@PostMapping("/register/save")
 	public String registration(@Valid @ModelAttribute("user") UserDto userDto, BindingResult result, Model model) {
 		User existingUser = userService.findUserByEmail(userDto.getEmail());
